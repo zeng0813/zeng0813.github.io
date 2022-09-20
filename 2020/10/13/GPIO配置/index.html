@@ -23,28 +23,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zeng0813.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="最近把VScode+WSL环境搞定了，很舒服，体验一下子上了一个档次，Windows和Linux无缝切换，博客也是在这个环境上搭建的。 WSL1，Windows Subsystem for Linux（简称WSL）。在Windows上运行原生的Linux。2，win10和Linux文件共享，可以相互操作3，使用Linux的软件环境配合VScode进行开发">
+    <meta name="description" content="LCD12864接线说明SC32F5832 -&gt; LCD12864PC6 	  -&gt; CN3-RSPC4 	  -&gt; CN3-RWPC3 	  -&gt; CN3-EPC7 	  -&gt; CN3-PSBPC15 	  -&gt; CN3-RST 中断配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VScode+WSL开发环境">
-<meta property="og:url" content="https://zeng0813.github.io/2020/04/12/VScode-WSL%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:title" content="GPIO配置">
+<meta property="og:url" content="https://zeng0813.github.io/2020/10/13/GPIO%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="zeng0813">
-<meta property="og:description" content="最近把VScode+WSL环境搞定了，很舒服，体验一下子上了一个档次，Windows和Linux无缝切换，博客也是在这个环境上搭建的。 WSL1，Windows Subsystem for Linux（简称WSL）。在Windows上运行原生的Linux。2，win10和Linux文件共享，可以相互操作3，使用Linux的软件环境配合VScode进行开发">
+<meta property="og:description" content="LCD12864接线说明SC32F5832 -&gt; LCD12864PC6 	  -&gt; CN3-RSPC4 	  -&gt; CN3-RWPC3 	  -&gt; CN3-EPC7 	  -&gt; CN3-PSBPC15 	  -&gt; CN3-RST 中断配置">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-12T12:00:00.000Z">
-<meta property="article:modified_time" content="2020-05-20T08:42:24.000Z">
+<meta property="article:published_time" content="2020-10-13T06:27:43.000Z">
+<meta property="article:modified_time" content="2022-09-20T06:36:00.088Z">
 <meta property="article:author" content="zeng0813">
-<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://zeng0813.github.io/2020/04/12/VScode-WSL%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+<link rel="canonical" href="https://zeng0813.github.io/2020/10/13/GPIO%E9%85%8D%E7%BD%AE/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zeng0813.github.io/2020/04/12/VScode-WSL%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/","path":"2020/04/12/VScode-WSL开发环境/","title":"VScode+WSL开发环境"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zeng0813.github.io/2020/10/13/GPIO%E9%85%8D%E7%BD%AE/","path":"2020/10/13/GPIO配置/","title":"GPIO配置"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>VScode+WSL开发环境 | zeng0813</title>
+<title>GPIO配置 | zeng0813</title>
   
 
 
@@ -147,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WSL"><span class="nav-number">1.</span> <span class="nav-text">WSL</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LCD12864%E6%8E%A5%E7%BA%BF%E8%AF%B4%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">LCD12864接线说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">中断配置      </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GPIO%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">GPIO配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E4%BD%BF%E8%83%BD"><span class="nav-number">3.1.</span> <span class="nav-text">输出使能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E4%BD%BF%E8%83%BD"><span class="nav-number">3.2.</span> <span class="nav-text">输入使能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E7%BD%AE%E9%AB%98"><span class="nav-number">3.3.</span> <span class="nav-text">输出置高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E7%BD%AE%E4%BD%8E"><span class="nav-number">3.4.</span> <span class="nav-text">输出置低</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E7%BF%BB%E8%BD%AC"><span class="nav-number">3.5.</span> <span class="nav-text">输出翻转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E4%BD%BF%E8%83%BD"><span class="nav-number">3.6.</span> <span class="nav-text">中断使能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%B1%8F%E8%94%BD"><span class="nav-number">3.7.</span> <span class="nav-text">中断屏蔽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E5%B9%B3%E8%A7%A6%E5%8F%91%E4%B8%AD%E6%96%AD"><span class="nav-number">3.8.</span> <span class="nav-text">电平触发中断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91%E4%B8%AD%E6%96%AD"><span class="nav-number">3.9.</span> <span class="nav-text">边沿触发中断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91"><span class="nav-number">3.10.</span> <span class="nav-text">双边沿触发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91"><span class="nav-number">3.11.</span> <span class="nav-text">单边沿触发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E5%8D%87%E6%B2%BF%E6%88%96%E9%AB%98%E7%94%B5%E5%B9%B3%E8%A7%A6%E5%8F%91"><span class="nav-number">3.12.</span> <span class="nav-text">上升沿或高电平触发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E9%99%8D%E6%B2%BF%E6%88%96%E4%BD%8E%E7%94%B5%E5%B9%B3%E8%A7%A6%E5%8F%91"><span class="nav-number">3.13.</span> <span class="nav-text">下降沿或低电平触发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E6%A0%87%E5%BF%97%E4%BD%8D%E6%B8%85%E9%99%A4"><span class="nav-number">3.14.</span> <span class="nav-text">中断标志位清除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPIO%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.15.</span> <span class="nav-text">GPIO初始化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-4%E7%9F%A9%E9%98%B5%E9%94%AE%E7%9B%98%E6%8E%A5%E7%BA%BF%E8%AF%B4%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">4*4矩阵键盘接线说明</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,7 +219,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zeng0813.github.io/2020/04/12/VScode-WSL%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+    <link itemprop="mainEntityOfPage" href="https://zeng0813.github.io/2020/10/13/GPIO%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -233,12 +232,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="VScode+WSL开发环境 | zeng0813">
+      <meta itemprop="name" content="GPIO配置 | zeng0813">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          VScode+WSL开发环境
+          GPIO配置
         </h1>
 
         <div class="post-meta-container">
@@ -249,14 +248,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-04-12 20:00:00" itemprop="dateCreated datePublished" datetime="2020-04-12T20:00:00+08:00">2020-04-12</time>
+      <time title="创建时间：2020-10-13 14:27:43" itemprop="dateCreated datePublished" datetime="2020-10-13T14:27:43+08:00">2020-10-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2020-05-20 16:42:24" itemprop="dateModified" datetime="2020-05-20T16:42:24+08:00">2020-05-20</time>
+      <time title="修改时间：2022-09-20 14:36:00" itemprop="dateModified" datetime="2022-09-20T14:36:00+08:00">2022-09-20</time>
     </span>
 
   
@@ -266,7 +265,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>174</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -284,8 +283,25 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>最近把VScode+WSL环境搞定了，很舒服，体验一下子上了一个档次，Windows和Linux无缝切换，博客也是在这个环境上搭建的。</p>
-<h1 id="WSL"><a href="#WSL" class="headerlink" title="WSL"></a>WSL</h1><p>1，Windows Subsystem for Linux（简称WSL）。在Windows上运行原生的Linux。<br>2，win10和Linux文件共享，可以相互操作<br>3，使用Linux的软件环境配合VScode进行开发</p>
+        <h1 id="LCD12864接线说明"><a href="#LCD12864接线说明" class="headerlink" title="LCD12864接线说明"></a>LCD12864接线说明</h1><p>SC32F5832 -&gt; LCD12864<br>PC6 	  -&gt; CN3-RS<br>PC4 	  -&gt; CN3-RW<br>PC3 	  -&gt; CN3-E<br>PC7 	  -&gt; CN3-PSB<br>PC15 	  -&gt; CN3-RST</p>
+<h1 id="中断配置"><a href="#中断配置" class="headerlink" title="中断配置      "></a>中断配置      <span id="more"></span></h1><p>IRQ_INIT()      &#x2F;&#x2F;中断初始化<br>IRQ_ENAABLE()   &#x2F;&#x2F;开中断<br>IRQ_DISABLE()   &#x2F;&#x2F;关闭中断</p>
+<p>PX_INT_ENABLE(X)        &#x2F;&#x2F;开启中断<br>PX_INT_EDGE(X)          &#x2F;&#x2F;配置为边沿中断<br>PX_INT_BE_DISABLE(X)    &#x2F;&#x2F;配置为单边沿触发<br>PX_INT_POL_LOW(X)       &#x2F;&#x2F;配置为下降沿触发<br>PX_INT_FLAG_CLR(X)      &#x2F;&#x2F;清除中断标志</p>
+<h1 id="GPIO配置"><a href="#GPIO配置" class="headerlink" title="GPIO配置"></a>GPIO配置</h1><h2 id="输出使能"><a href="#输出使能" class="headerlink" title="输出使能"></a>输出使能</h2><p>PX_OUT_ENABLE(x)        PX-&gt;OUTEN|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="输入使能"><a href="#输入使能" class="headerlink" title="输入使能"></a>输入使能</h2><p>PX_OUT_DISABLE(x)       PX-&gt;OUTEN&amp;&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="输出置高"><a href="#输出置高" class="headerlink" title="输出置高"></a>输出置高</h2><p>PX_OUT_HIGH(x)          PX-&gt;OUTSET&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="输出置低"><a href="#输出置低" class="headerlink" title="输出置低"></a>输出置低</h2><p>PX_OUT_LOW(x)           PX-&gt;OUTCLR&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="输出翻转"><a href="#输出翻转" class="headerlink" title="输出翻转"></a>输出翻转</h2><p>PX_OUT_TOGGLE(x)        PX-&gt;OUTTGL|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="中断使能"><a href="#中断使能" class="headerlink" title="中断使能"></a>中断使能</h2><p>PX_INT_ENABLE(x)        PX-&gt;INTMASK&amp;&#x3D;~(1 &lt;&lt; x)</p>
+<h2 id="中断屏蔽"><a href="#中断屏蔽" class="headerlink" title="中断屏蔽"></a>中断屏蔽</h2><p>PX_INT_DISABLE(x)       PX-&gt;INTMASK|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="电平触发中断"><a href="#电平触发中断" class="headerlink" title="电平触发中断"></a>电平触发中断</h2><p>PX_INT_LEVEL(x)         PX-&gt;INTTYPE&amp;&#x3D;~(1 &lt;&lt; x)</p>
+<h2 id="边沿触发中断"><a href="#边沿触发中断" class="headerlink" title="边沿触发中断"></a>边沿触发中断</h2><p>PX_INT_EDGE(x)          PX-&gt;INTTYPE|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="双边沿触发"><a href="#双边沿触发" class="headerlink" title="双边沿触发"></a>双边沿触发</h2><p>PX_INT_BE_ENABLE(x)     PX-&gt;INTBV|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="单边沿触发"><a href="#单边沿触发" class="headerlink" title="单边沿触发"></a>单边沿触发</h2><p>PX_INT_BE_DISABLE(x)    PX-&gt;INTBV&amp;&#x3D;~(1 &lt;&lt; x)</p>
+<h2 id="上升沿或高电平触发"><a href="#上升沿或高电平触发" class="headerlink" title="上升沿或高电平触发"></a>上升沿或高电平触发</h2><p>PX_INT_POL_HIGH(x)      PX-&gt;INTPOL|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="下降沿或低电平触发"><a href="#下降沿或低电平触发" class="headerlink" title="下降沿或低电平触发"></a>下降沿或低电平触发</h2><p>PX_INT_POL_LOW(x)       PX-&gt;INTPOL&amp;&#x3D;~(1 &lt;&lt; x)</p>
+<h2 id="中断标志位清除"><a href="#中断标志位清除" class="headerlink" title="中断标志位清除"></a>中断标志位清除</h2><p>PX_INT_FLAG_CLR(x)      PX-&gt;RIS&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="GPIO初始化"><a href="#GPIO初始化" class="headerlink" title="GPIO初始化"></a>GPIO初始化</h2><p>GPIO_init()</p>
+<h1 id="4-4矩阵键盘接线说明"><a href="#4-4矩阵键盘接线说明" class="headerlink" title="4*4矩阵键盘接线说明"></a>4*4矩阵键盘接线说明</h1><p>SC32F5832 -&gt; KeyBoard<br>PB8 	  -&gt; R1<br>PB9 	  -&gt; R2<br>PB10 	  -&gt; R3<br>PB11 	  -&gt; R4<br>PB12 	  -&gt; C1<br>PB13 	  -&gt; C2<br>PB14 	  -&gt; C3<br>PB15 	  -&gt; C4</p>
 
     </div>
 
@@ -311,21 +327,18 @@
   </div>
 </div>
 
-          <div class="post-tags">
-              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/04/11/Ubuntu%E9%85%8D%E7%BD%AEnodejs/" rel="prev" title="Ubuntu配置nodejs">
-                  <i class="fa fa-chevron-left"></i> Ubuntu配置nodejs
+                <a href="/2020/07/05/%E5%AE%B6%E5%BA%AD%E8%B7%AF%E7%94%B1%E5%99%A8%E7%BB%84%E7%BD%91/" rel="prev" title="家庭路由器组网">
+                  <i class="fa fa-chevron-left"></i> 家庭路由器组网
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/04/14/C%E8%AF%AD%E8%A8%80/" rel="next" title="C语言(一)">
-                  C语言(一) <i class="fa fa-chevron-right"></i>
+                <a href="/2021/03/20/%E5%88%9D%E8%AF%86%E7%89%A9%E8%81%94%E7%BD%91/" rel="next" title="初识物联网">
+                  初识物联网 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -395,7 +408,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zeng0813","repo":"gitalk","client_id":"7af250df3a6bf3baa2ba","client_secret":"6aa8b354b102601334d064668bc0133868a7638a","admin_user":"zeng0813","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"69b1202280373b945b8cc9c33874e281"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zeng0813","repo":"gitalk","client_id":"7af250df3a6bf3baa2ba","client_secret":"6aa8b354b102601334d064668bc0133868a7638a","admin_user":"zeng0813","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"7374373b7ade4fcbf9d1f99087a49eee"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

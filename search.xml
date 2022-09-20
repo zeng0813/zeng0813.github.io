@@ -29,10 +29,42 @@
       </tags>
   </entry>
   <entry>
+    <title>GPIO配置</title>
+    <url>/2020/10/13/GPIO%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="LCD12864接线说明"><a href="#LCD12864接线说明" class="headerlink" title="LCD12864接线说明"></a>LCD12864接线说明</h1><p>SC32F5832 -&gt; LCD12864<br>PC6 	  -&gt; CN3-RS<br>PC4 	  -&gt; CN3-RW<br>PC3 	  -&gt; CN3-E<br>PC7 	  -&gt; CN3-PSB<br>PC15 	  -&gt; CN3-RST</p>
+<h1 id="中断配置"><a href="#中断配置" class="headerlink" title="中断配置      "></a>中断配置      <span id="more"></span></h1><p>IRQ_INIT()      &#x2F;&#x2F;中断初始化<br>IRQ_ENAABLE()   &#x2F;&#x2F;开中断<br>IRQ_DISABLE()   &#x2F;&#x2F;关闭中断</p>
+<p>PX_INT_ENABLE(X)        &#x2F;&#x2F;开启中断<br>PX_INT_EDGE(X)          &#x2F;&#x2F;配置为边沿中断<br>PX_INT_BE_DISABLE(X)    &#x2F;&#x2F;配置为单边沿触发<br>PX_INT_POL_LOW(X)       &#x2F;&#x2F;配置为下降沿触发<br>PX_INT_FLAG_CLR(X)      &#x2F;&#x2F;清除中断标志</p>
+<h1 id="GPIO配置"><a href="#GPIO配置" class="headerlink" title="GPIO配置"></a>GPIO配置</h1><h2 id="输出使能"><a href="#输出使能" class="headerlink" title="输出使能"></a>输出使能</h2><p>PX_OUT_ENABLE(x)        PX-&gt;OUTEN|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="输入使能"><a href="#输入使能" class="headerlink" title="输入使能"></a>输入使能</h2><p>PX_OUT_DISABLE(x)       PX-&gt;OUTEN&amp;&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="输出置高"><a href="#输出置高" class="headerlink" title="输出置高"></a>输出置高</h2><p>PX_OUT_HIGH(x)          PX-&gt;OUTSET&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="输出置低"><a href="#输出置低" class="headerlink" title="输出置低"></a>输出置低</h2><p>PX_OUT_LOW(x)           PX-&gt;OUTCLR&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="输出翻转"><a href="#输出翻转" class="headerlink" title="输出翻转"></a>输出翻转</h2><p>PX_OUT_TOGGLE(x)        PX-&gt;OUTTGL|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="中断使能"><a href="#中断使能" class="headerlink" title="中断使能"></a>中断使能</h2><p>PX_INT_ENABLE(x)        PX-&gt;INTMASK&amp;&#x3D;~(1 &lt;&lt; x)</p>
+<h2 id="中断屏蔽"><a href="#中断屏蔽" class="headerlink" title="中断屏蔽"></a>中断屏蔽</h2><p>PX_INT_DISABLE(x)       PX-&gt;INTMASK|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="电平触发中断"><a href="#电平触发中断" class="headerlink" title="电平触发中断"></a>电平触发中断</h2><p>PX_INT_LEVEL(x)         PX-&gt;INTTYPE&amp;&#x3D;~(1 &lt;&lt; x)</p>
+<h2 id="边沿触发中断"><a href="#边沿触发中断" class="headerlink" title="边沿触发中断"></a>边沿触发中断</h2><p>PX_INT_EDGE(x)          PX-&gt;INTTYPE|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="双边沿触发"><a href="#双边沿触发" class="headerlink" title="双边沿触发"></a>双边沿触发</h2><p>PX_INT_BE_ENABLE(x)     PX-&gt;INTBV|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="单边沿触发"><a href="#单边沿触发" class="headerlink" title="单边沿触发"></a>单边沿触发</h2><p>PX_INT_BE_DISABLE(x)    PX-&gt;INTBV&amp;&#x3D;~(1 &lt;&lt; x)</p>
+<h2 id="上升沿或高电平触发"><a href="#上升沿或高电平触发" class="headerlink" title="上升沿或高电平触发"></a>上升沿或高电平触发</h2><p>PX_INT_POL_HIGH(x)      PX-&gt;INTPOL|&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="下降沿或低电平触发"><a href="#下降沿或低电平触发" class="headerlink" title="下降沿或低电平触发"></a>下降沿或低电平触发</h2><p>PX_INT_POL_LOW(x)       PX-&gt;INTPOL&amp;&#x3D;~(1 &lt;&lt; x)</p>
+<h2 id="中断标志位清除"><a href="#中断标志位清除" class="headerlink" title="中断标志位清除"></a>中断标志位清除</h2><p>PX_INT_FLAG_CLR(x)      PX-&gt;RIS&#x3D;(1 &lt;&lt; x)</p>
+<h2 id="GPIO初始化"><a href="#GPIO初始化" class="headerlink" title="GPIO初始化"></a>GPIO初始化</h2><p>GPIO_init()</p>
+<h1 id="4-4矩阵键盘接线说明"><a href="#4-4矩阵键盘接线说明" class="headerlink" title="4*4矩阵键盘接线说明"></a>4*4矩阵键盘接线说明</h1><p>SC32F5832 -&gt; KeyBoard<br>PB8 	  -&gt; R1<br>PB9 	  -&gt; R2<br>PB10 	  -&gt; R3<br>PB11 	  -&gt; R4<br>PB12 	  -&gt; C1<br>PB13 	  -&gt; C2<br>PB14 	  -&gt; C3<br>PB15 	  -&gt; C4</p>
+]]></content>
+  </entry>
+  <entry>
     <title>SSH</title>
     <url>/2022/01/23/SSH/</url>
-    <content><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>从 2021 年 8 月 13 日开始，在对 Git 操作进行身份验证时，我们将不再接受帐户密码，并且需要使用基于令牌的身份验证，例如个人访问令牌（对于开发人员）或 OAuth 或 GitHub 应用安装令牌（对于集成商），用于 GitHub.com 上所有经过身份验证的 Git 操作。您也可以在自己喜欢的地方继续使用 SSH 密钥。</p>
-<h1 id="检查现有-SSH-密钥"><a href="#检查现有-SSH-密钥" class="headerlink" title="检查现有 SSH 密钥"></a>检查现有 SSH 密钥</h1>]]></content>
+    <content><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>从 2021 年 8 月 13 日开始，在对 Git 操作进行身份验证时，我们将不再接受帐户密码，并且需要使用基于令牌的身份验证，例如个人访问令牌（对于开发人员）或 OAuth 或 GitHub 应用安装令牌（对于集成商），用于 GitHub.com 上所有经过身份验证的 Git 操作。您也可以在自己喜欢的地方继续使用 SSH 密钥。<span id="more"></span></p>
+<h1 id="检查现有SSH密钥"><a href="#检查现有SSH密钥" class="headerlink" title="检查现有SSH密钥"></a>检查现有SSH密钥</h1><p>1、打开终端terminal<br>2、输入命令查看是否存在现有的SSH密钥。<br><code>ls -al ~/.ssh</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br><span class="line">Lists the files in your .ssh directory, if they exist </span><br></pre></td></tr></table></figure>
+<p>3、检查目录列表是否具有公有SSH密钥。</p>
+<h2 id="生成新的SSH密钥"><a href="#生成新的SSH密钥" class="headerlink" title="生成新的SSH密钥"></a>生成新的SSH密钥</h2><p><code>ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;</code></p>
+<h2 id="SSH代理"><a href="#SSH代理" class="headerlink" title="SSH代理"></a>SSH代理</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">eval `ssh-agent -s`</span><br><span class="line">ssh-add ~/.ssh/id_ed25519</span><br></pre></td></tr></table></figure>
+<h2 id="SSH密钥密码"><a href="#SSH密钥密码" class="headerlink" title="SSH密钥密码"></a>SSH密钥密码</h2><p><code>ssh-keygen -p -f ~/.ssh/id_ed25519</code></p>
+<h2 id="测试SSH连接"><a href="#测试SSH连接" class="headerlink" title="测试SSH连接"></a>测试SSH连接</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br><span class="line">Attempts to ssh to Gitee</span><br><span class="line">ssh -T git@github.com</span><br><span class="line">Attempts to ssh to Github</span><br></pre></td></tr></table></figure>
+<h2 id="查看SSH公钥"><a href="#查看SSH公钥" class="headerlink" title="查看SSH公钥"></a>查看SSH公钥</h2><p><code>cat ~/.ssh/id_ed25519.pub</code></p>
+]]></content>
   </entry>
   <entry>
     <title>Ubuntu配置nodejs</title>
@@ -81,6 +113,21 @@
       </tags>
   </entry>
   <entry>
+    <title>AIoT</title>
+    <url>/2021/05/12/AIoT/</url>
+    <content><![CDATA[<h1 id="AIoT概述-通识AI和IoT"><a href="#AIoT概述-通识AI和IoT" class="headerlink" title="AIoT概述-通识AI和IoT"></a>AIoT概述-通识AI和IoT</h1><h2 id="AIoT-x3D-AI-IoT"><a href="#AIoT-x3D-AI-IoT" class="headerlink" title="AIoT&#x3D;AI+IoT"></a>AIoT&#x3D;AI+IoT</h2><h2 id="AI概述"><a href="#AI概述" class="headerlink" title="AI概述"></a>AI概述</h2><p>人工智能（Artificial Intelligence）：简称AI，是研究、开发用于模拟、延展和扩展人的智能的理论、方法、技术及应用系统的一门新的技术科学。       <span id="more"></span></p>
+<h2 id="AI常用的技术"><a href="#AI常用的技术" class="headerlink" title="AI常用的技术"></a>AI常用的技术</h2><p>机器学习<br>深度学习<br>强化学习</p>
+<h2 id="AI的技术方向"><a href="#AI的技术方向" class="headerlink" title="AI的技术方向"></a>AI的技术方向</h2><p>机器视觉、语音识别、自然语言处理、人机交互、专家系统、统计学习、数据挖掘、模式识别</p>
+<h2 id="AI的应用场景"><a href="#AI的应用场景" class="headerlink" title="AI的应用场景"></a>AI的应用场景</h2><p>身份识别、智能机器人、语音翻译、专家系统</p>
+<h2 id="IoT概述"><a href="#IoT概述" class="headerlink" title="IoT概述"></a>IoT概述</h2><p>物联网（Internet of Things）简称：IoT，是新一代信息技术的重要组成部分，也是“信息化”时代的重要发展阶段。</p>
+<h2 id="物联网的层次架构"><a href="#物联网的层次架构" class="headerlink" title="物联网的层次架构"></a>物联网的层次架构</h2><p>行业应用：数据呈现及客户交互<br>云：解决数据如何存储、检索、使用、业务规划、安全、维护、费用等<br>管：接入和传输网络<br>端：信息收集和信号处理</p>
+<h2 id="IoT的应用场景"><a href="#IoT的应用场景" class="headerlink" title="IoT的应用场景"></a>IoT的应用场景</h2><p>共享单车、排队取号、智能泊车、智能家居</p>
+]]></content>
+      <tags>
+        <tag>物联网</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows10 2004体验</title>
     <url>/2020/05/13/Windows10-2004%E4%BD%93%E9%AA%8C/</url>
     <content><![CDATA[<p>Windows10 2004版本正式发布了，我在第一时间下载安装体验了，有亮点也有失望。</p>
@@ -119,7 +166,7 @@
   </entry>
   <entry>
     <title>初识物联网</title>
-    <url>/2022/09/20/%E5%88%9D%E8%AF%86%E7%89%A9%E8%81%94%E7%BD%91/</url>
+    <url>/2021/03/20/%E5%88%9D%E8%AF%86%E7%89%A9%E8%81%94%E7%BD%91/</url>
     <content><![CDATA[<h1 id="物联网初探"><a href="#物联网初探" class="headerlink" title="物联网初探"></a>物联网初探</h1><h2 id="物联网（Internet-of-Things）早期概念定义"><a href="#物联网（Internet-of-Things）早期概念定义" class="headerlink" title="物联网（Internet of Things）早期概念定义"></a>物联网（Internet of Things）早期概念定义</h2><p>指依托RFID（射频识别）技术和设备，按预定的通信协议与互联网结合，使物品信息实现智能化识别和管理，实现物品信息互联、可交换和共享而形成的网络。</p>
 <h2 id="物联网发展历程"><a href="#物联网发展历程" class="headerlink" title="物联网发展历程       "></a>物联网发展历程       <span id="more"></span></h2><p>2005 国际电信联盟引用物联网概念<br>2008 IBM提出“智慧地球”<br>2009 “感知中国”<br>2013 德国“工业4.0”<br>2015 “中国制造2025”发布</p>
 <h2 id="发展历史时期划分"><a href="#发展历史时期划分" class="headerlink" title="发展历史时期划分"></a>发展历史时期划分</h2><p>1999-2013 概念期<br>2014-2016 发展期<br>2016-至今 成熟期</p>
@@ -140,15 +187,15 @@
       </tags>
   </entry>
   <entry>
-    <title>家庭路由器组网</title>
-    <url>/2020/07/05/%E5%AE%B6%E5%BA%AD%E8%B7%AF%E7%94%B1%E5%99%A8%E7%BB%84%E7%BD%91/</url>
-    <content><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>家里路由器信号</p>
-]]></content>
-  </entry>
-  <entry>
     <title>我的第一篇博客</title>
     <url>/2020/03/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>我的第一篇博客，于2020年3月20日发出。<br>留个纪念！<br>博客已基本完善。<br>博客内容不定时更新。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>家庭路由器组网</title>
+    <url>/2020/07/05/%E5%AE%B6%E5%BA%AD%E8%B7%AF%E7%94%B1%E5%99%A8%E7%BB%84%E7%BD%91/</url>
+    <content><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>家里路由器信号</p>
 ]]></content>
   </entry>
   <entry>
@@ -158,6 +205,39 @@
 ]]></content>
       <tags>
         <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>物联网（二）</title>
+    <url>/2021/04/10/%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="CoAP协议技术原理"><a href="#CoAP协议技术原理" class="headerlink" title="CoAP协议技术原理"></a>CoAP协议技术原理</h1><p>CoAP是受限制的应用协议（Constrained Application Protocol）的代名词。在当前由PC机组成的世界，信息交换是通过TCP和应用层协议HTTP实现的。但是对于小型设备而言，实现TCP和HTTP协议显然是一个过分的要求。为了让小设备可以接入互联网，CoAP协议被设计出来。CoAP是一种应用层协议，它运行于UDP协议之上而不是像运行TCP之上。CoAP协议非常小巧，最小的数据包仅为4字节。   <span id="more"></span></p>
+<h2 id="CoAP协议的定义"><a href="#CoAP协议的定义" class="headerlink" title="CoAP协议的定义"></a>CoAP协议的定义</h2><p>CoAP协议的交互模型与HTTP的客户端&#x2F;服务端模型类似。然而，在M2M的交互场景中，CoAP目标是设计一个通用的网络协议，满足受限环境的特殊需求，特别考虑了能源、楼宇自动化和其它M2M应用。<br>CoAP并不能替代HTTP协议，但是对于那些小设备（256KB Flash 32KB RAM 20MHz主频）而言CoAP的确是一个更好的解决方案。</p>
+<h2 id="CoAP协议特点"><a href="#CoAP协议特点" class="headerlink" title="CoAP协议特点"></a>CoAP协议特点</h2><p>1）满足受限环境下M2M需求的协议<br>2）CoAp协议基于UDP<br>3）异步消息交换<br>4）轻量级的头部，且解析复杂度低<br>5）支持URI和Content-Type<br>6）能实现简单的数据缓存和代理<br>7）无状态的HTTP映射，可以构建代理服务器，使CoAP资源可以用HTTP协议访问，也可以使HTTP接口实现于CoAP协议之上<br>8）支持DTLS</p>
+<h2 id="RESTful架构"><a href="#RESTful架构" class="headerlink" title="RESTful架构"></a>RESTful架构</h2><p>REST（Representational State Transfer）是一种设计风格而不是标准，如果一个架构符合REST原则，我们就称它为RESTful架构，REST可以直译为表现层状态转化，表现层其实指的是资源的表现层。通俗来讲就是：资源在网络中某种表现形式进行状态转移。分解开来看：<br>1）Resource：资源，即数据<br>2）Representational：某种表现形式，比如用JSON，XML等<br>3）State Transfer：状态变化。通过动词（如POST，GET，PUT，DELETE）实现</p>
+<h2 id="CoAP报文结构简介"><a href="#CoAP报文结构简介" class="headerlink" title="CoAP报文结构简介"></a>CoAP报文结构简介</h2><p>1）和其他TCP IP协议簇中的协议一样，CoAP协议总是以“头”的形式出现在负载之前，而负载和CoAP头之间使用单字节0xFF分离<br>2）CoAP协议报文第一行是消息头，必须有，固定4个byte，其它字段为可选<br>3）Wireshark抓包</p>
+<h2 id="CoAP的Request方法"><a href="#CoAP的Request方法" class="headerlink" title="CoAP的Request方法"></a>CoAP的Request方法</h2><p>CoAP协议定义的Request方法有如下4种：<br>1）【0.01】GET方法——用于获取某资源<br>2）【0.02】POST方法——用于创建某资源<br>3）【0.03】PUT方法——用于更新某资源<br>4）【0.04】DELETE方法——用于删除某资源<br>对于不能识别的方法，需要返回一个4.05（method Not Allowed）的Piggybacked response</p>
+<h2 id="CoAP的响应码-4-XX"><a href="#CoAP的响应码-4-XX" class="headerlink" title="CoAP的响应码-4.XX"></a>CoAP的响应码-4.XX</h2><p>【4.00】Bad Request 请求错误，服务器无法处理。类似于HTTP 400<br>【4.01】Unauthorized 没有范围权限。类似于HTTP 401<br>【4.02】Bad Option 请求中包含错误选项<br>【4.03】Forbidden 服务器拒绝请求。类似于HTTP 403<br>【4.04】Not Found 服务器找不到资源。类似于HTTP 404<br>【4.05】Method Not Allowed 非法请求方法。类似于HTTP 405<br>【4.06】Not Acceptable请求选项和服务器生成内容选项不一致。类似于HTTP 406<br>【4.12】Precondition Failed请求参数不足。类似于HTTP 412<br>【4.15】Unsuppor Conten-Type 请求中的媒体类型不被支持。类似于HTTP 415</p>
+<h2 id="CoAP-Messages承载的信息"><a href="#CoAP-Messages承载的信息" class="headerlink" title="CoAP Messages承载的信息"></a>CoAP Messages承载的信息</h2><p>CoAP Messages承载信息包括：<br>1）Request<br>2）Response<br>3）Empty Message</p>
+<h2 id="Proxy-代理"><a href="#Proxy-代理" class="headerlink" title="Proxy-代理"></a>Proxy-代理</h2><p>Proxy是一种在CoAP Clients驱动下代表它们执行Request的Endpoint<br>Proxy按照功能分类：<br>前向代理（Forward-proxy）<br>反向代理（Reverse-proxy）</p>
+<h1 id="MQTT协议技术原理"><a href="#MQTT协议技术原理" class="headerlink" title="MQTT协议技术原理"></a>MQTT协议技术原理</h1><p>MQTT是一个基于客户端发布&#x2F;订阅模式的消息传输协议。它轻量、开放、简洁、优雅以便于可以被快速实现。</p>
+<h2 id="MQTT概述"><a href="#MQTT概述" class="headerlink" title="MQTT概述"></a>MQTT概述</h2><p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输协议）。它构建于TCP&#x2F;IP协议上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布&#x2F;订阅型“轻量级”通讯协议</p>
+<h2 id="MQTT协议特点"><a href="#MQTT协议特点" class="headerlink" title="MQTT协议特点"></a>MQTT协议特点</h2><p>1）使用发布&#x2F;订阅消息模式，提供了一对多的消息分发和应用之间的解耦<br>2）消息传输不需要知道负载内容<br>3）提供三种等级的服务质量<br>4）很小的传输消耗和协议数据交换，很大限度减少网络流量<br>5)异常连接断开发生时，能通知到相关各方</p>
+<h2 id="MQTT的发布-x2F-订阅模式"><a href="#MQTT的发布-x2F-订阅模式" class="headerlink" title="MQTT的发布&#x2F;订阅模式"></a>MQTT的发布&#x2F;订阅模式</h2><p>1）客户端连接到代理。它可以订阅代理中的任何消息“主题”<br>2）客户端通过将消息和主题发送给代理，发布某个主题范围内的消息<br>3）代理然后将消息转发给所有订阅该主题的客户端<br>4）发布&#x2F;订阅解耦了消息的发布者和接受者</p>
+<h2 id="MQTT发布与订阅"><a href="#MQTT发布与订阅" class="headerlink" title="MQTT发布与订阅"></a>MQTT发布与订阅</h2><h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>当MQTT客户端和代理（broker）建立连接后，就可以发布消息了<br>每个消息必须包含一个主题，代理（broker）根据主题将消息转发给感兴趣的客户端。每个消息通常拥有payload，其中包含了以字节格式传输的实际数据</p>
+<h3 id="订阅"><a href="#订阅" class="headerlink" title="订阅"></a>订阅</h3><p>订阅包含一个主题过滤器（Topic Filter）和一个最大的服务质量（QoS）等级<br>订阅与单个会话（Session）关联。会话可以包含多于一个的订阅。会话的每个订阅都有一个不同的主题过滤器</p>
+<h2 id="MQTT主题通配符"><a href="#MQTT主题通配符" class="headerlink" title="MQTT主题通配符"></a>MQTT主题通配符</h2><h3 id="单级："><a href="#单级：" class="headerlink" title="单级：+"></a>单级：+</h3><p>只能用于单个主题层级匹配的通配符</p>
+<h3 id="多级："><a href="#多级：" class="headerlink" title="多级：#"></a>多级：#</h3><p>用于匹配主题中任意层级的通配符</p>
+<h1 id="物联网操作系统"><a href="#物联网操作系统" class="headerlink" title="物联网操作系统"></a>物联网操作系统</h1><h2 id="RTOS介绍"><a href="#RTOS介绍" class="headerlink" title="RTOS介绍"></a>RTOS介绍</h2><h3 id="RTOS概念"><a href="#RTOS概念" class="headerlink" title="RTOS概念"></a>RTOS概念</h3><p>RTOS（Real-time operating system，实时操作系统）。<br>实时操作系统根据任务执行的实时性，分为“硬实时”操作系统和“软实时”操作系统。<br>“硬实时”操作系统必须使任务在确定的时间内完成。<br>“软实时”操作系统能让绝大多数任务在确定时间内完成。</p>
+<h3 id="使用RTOS的好处"><a href="#使用RTOS的好处" class="headerlink" title="使用RTOS的好处"></a>使用RTOS的好处</h3><p>Huawei LiteOS是一款“软实时”操作系统。<br>降低开发难度，直接使用系统API，即可完成系统资源的申请、多任务的配合，以及任务间的通信等。<br>增加代码可读性，易于维护和管理。<br>提升可移植性，对接不同芯片的工作由操作系统完成，应用开发者只需关注OS层接口。</p>
+<h2 id="LiteOS介绍"><a href="#LiteOS介绍" class="headerlink" title="LiteOS介绍"></a>LiteOS介绍</h2><h3 id="Huawei-LiteOS概述"><a href="#Huawei-LiteOS概述" class="headerlink" title="Huawei LiteOS概述"></a>Huawei LiteOS概述</h3><p>Huawei LiteOS基础内核是最精简的Huawei LiteOS操作系统代码，包括任务管理、内存管理、时间管理、通信管理、中断管理、队列管理、事件管理、定时器等操作系统基础组件，可以单独运行。<br>Huawei LiteOS Kernel的优势<br>1）高实时性，高稳定性。<br>2）超小内核，基础内核体积可以裁剪至不到10KB。<br>3）低功耗。<br>4）支持功能静态裁切。</p>
+<h3 id="物联网操作系统需求"><a href="#物联网操作系统需求" class="headerlink" title="物联网操作系统需求"></a>物联网操作系统需求</h3><p>连接需求：不同类型通信协议的互联互通<br>组网需求：自发现、自连接、自组网，网络可快速自愈<br>管理需求：不同类型传感器接入和算法开发的统一管理。</p>
+<h3 id="IOT终端在不同领域中需解决的问题"><a href="#IOT终端在不同领域中需解决的问题" class="headerlink" title="IOT终端在不同领域中需解决的问题"></a>IOT终端在不同领域中需解决的问题</h3><p>1）Connectivity：部署分散，无线覆盖不够<br>2）互通、互操作：不同厂家的设备<br>3）能耗：使用电池，能耗要严格控制<br>4）安全：无安全网络<br>5）建议配置：没有输入和显示设备<br>6）远程操控：NAT和防火墙后的设备</p>
+<h3 id="物联网操作系统面临的挑战"><a href="#物联网操作系统面临的挑战" class="headerlink" title="物联网操作系统面临的挑战"></a>物联网操作系统面临的挑战</h3><p>多传感器协同管理复杂<br>视频场景下性能、功耗要求高<br>终端之间通信协议复杂多样<br>开发语言编程效率低、上手难度大</p>
+<h3 id="硬件、协议、标准和应用场景高度碎片化"><a href="#硬件、协议、标准和应用场景高度碎片化" class="headerlink" title="硬件、协议、标准和应用场景高度碎片化"></a>硬件、协议、标准和应用场景高度碎片化</h3><h3 id="资源受限、超低功耗和高实时响应要求极致化"><a href="#资源受限、超低功耗和高实时响应要求极致化" class="headerlink" title="资源受限、超低功耗和高实时响应要求极致化"></a>资源受限、超低功耗和高实时响应要求极致化</h3><h3 id="简易规模部署和安全连接"><a href="#简易规模部署和安全连接" class="headerlink" title="简易规模部署和安全连接"></a>简易规模部署和安全连接</h3><h1 id="物联网平台"><a href="#物联网平台" class="headerlink" title="物联网平台"></a>物联网平台</h1><h2 id="物模型"><a href="#物模型" class="headerlink" title="物模型"></a>物模型</h2><p>物模型又称产品模型，用于描述设备具备的能力和特性。开发者通过定义profile，在物联网平台构建一款设备的抽象模型，使平台理解该款设备支持的服务、属性、命令等信息，如颜色、开关等。</p>
+<h1 id="中断机制"><a href="#中断机制" class="headerlink" title="中断机制"></a>中断机制</h1><h2 id="中断机制简介"><a href="#中断机制简介" class="headerlink" title="中断机制简介"></a>中断机制简介</h2><p>中断指出现需求时，CPU暂停执行当前程序，转而执行新程序的过程。</p>
+]]></content>
+      <tags>
+        <tag>物联网</tag>
       </tags>
   </entry>
   <entry>
