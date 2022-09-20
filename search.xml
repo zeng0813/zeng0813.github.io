@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>C语言(一)</title>
+    <url>/2020/04/14/C%E8%AF%AD%E8%A8%80/</url>
+    <content><![CDATA[<h1 id="初识C语言"><a href="#初识C语言" class="headerlink" title="初识C语言"></a>初识C语言</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>易懂，可靠，高效，可移植，强大而灵活，面向过程 <span id="more"></span></p>
+<h2 id="逻辑值"><a href="#逻辑值" class="headerlink" title="逻辑值"></a>逻辑值</h2><p>C语言中用值1表示true，值0表示false。</p>
+<h2 id="使用C语言的7个步骤"><a href="#使用C语言的7个步骤" class="headerlink" title="使用C语言的7个步骤"></a>使用C语言的7个步骤</h2><p>1.定义程序的目标    2.设计程序  3.编写代码  4.编译  5.运行程序  6.测试和调试程序    7.维护和修改程序</p>
+<h2 id="C语言标准"><a href="#C语言标准" class="headerlink" title="C语言标准"></a>C语言标准</h2><p>C11标准</p>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>VS2019或者VScode+WSL</p>
+<h2 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h2><p>C Primer Plus</p>
+<h2 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span> <span class="comment">//include:包含 stdio.h:standard input out.head标准输入输出的头文件</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>); <span class="comment">//print 打印 format 格式化 printf 格式化输出</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="int类型"><a href="#int类型" class="headerlink" title="int类型"></a>int类型</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;dec = %d; octal = %o; hex = %x\n&quot;</span>, x, x, x);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;dec = %d; octal = %#o; hex = %#x\n&quot;</span>, x, x, x);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="char类型"><a href="#char类型" class="headerlink" title="char类型"></a>char类型</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> ch;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Please enter a character.\n&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>, &amp;ch);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The code for %c is %d.\n&quot;</span>, ch, ch);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Bool类型"><a href="#Bool类型" class="headerlink" title="_Bool类型"></a>_Bool类型</h2><p>_Bool类型，用于表示布尔值，即逻辑值true和false。</p>
+<h2 id="可移植类型"><a href="#可移植类型" class="headerlink" title="可移植类型"></a>可移植类型</h2><p>stdint.h和inttypes.h</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;inttypes.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int32_t</span> me32;</span><br><span class="line"></span><br><span class="line">    me32 = <span class="number">45933945</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Frist, assume int32_t is int: &quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;me32 = %d\n&quot;</span>, me32);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Next, let&#x27;s not make any assumptions.\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Instead, use a \&quot;macro\&quot; from inttypes.h: &quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;me32 = %&quot;</span> PRId32 <span class="string">&quot;\n&quot;</span>, me32);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h2><p>float，double和long double</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">float</span> aboat = <span class="number">32000.0</span>;</span><br><span class="line">    <span class="type">double</span> abet = <span class="number">2.14e9</span>;</span><br><span class="line">    <span class="type">long</span> <span class="type">double</span> dip = <span class="number">5.32e-5</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%f can be written %e\n&quot;</span>, aboat, aboat);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;And it&#x27;s %a in hexadecimal, powers of 2 notation\n&quot;</span>, aboat);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%f can be written %e\n&quot;</span>, abet, abet);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%Lf can be written %Le\n&quot;</span>, dip, dip);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="复数和虚数类型"><a href="#复数和虚数类型" class="headerlink" title="复数和虚数类型"></a>复数和虚数类型</h2><p>虚数类型是可选的类型。<br>复数的实部和虚部类型都基于实浮点类型来构成<br>复数类型：<code>float _Complex</code> <code>double _Complex</code> <code> long double _Complex</code><br>虚数类型：<code>float _Imaginary</code> <code>double _Imaginary</code> <code>long double _Imaginary</code></p>
+<h2 id="类型大小"><a href="#类型大小" class="headerlink" title="类型大小"></a>类型大小</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Type int has a size of %zd bytes.\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Type char has a size of %zd bytes.\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Type long has a size of %zd bytes.\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">long</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Type long long has a size of %zd bytes.\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">long</span> <span class="type">long</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Type double has a size of %zd bytes.\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Type long double has a size of %zd bytes.\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="type">long</span> <span class="type">double</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="如何声明简单的变量"><a href="#如何声明简单的变量" class="headerlink" title="如何声明简单的变量"></a>如何声明简单的变量</h2><p>1，选择需要的类型。<br>2，使用有效的字符给变量起一个变量名。<br>3，按以下格式进行声明：类型说明符 变量名;<br>类型说明符由一个或多个关键字组成。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> erest;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">short</span> cash; </span><br></pre></td></tr></table></figure>
+<p>4，可以同时声明相同类型的多个变量，用逗号分隔各变量名。<br><code>char ch, init, ans;</code><br>5，在声明的同时还可以初始化变量。<br><code>float mass = 6.0E24;</code></p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PRAISE <span class="string">&quot;You are an extraordinary being.&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> name[<span class="number">40</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;What&#x27;s your name? &quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, name);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello, %s. %s\n&quot;</span>, name, PRAISE);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSH</title>
+    <url>/2022/01/23/SSH/</url>
+    <content><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>从 2021 年 8 月 13 日开始，在对 Git 操作进行身份验证时，我们将不再接受帐户密码，并且需要使用基于令牌的身份验证，例如个人访问令牌（对于开发人员）或 OAuth 或 GitHub 应用安装令牌（对于集成商），用于 GitHub.com 上所有经过身份验证的 Git 操作。您也可以在自己喜欢的地方继续使用 SSH 密钥。</p>
+<h1 id="检查现有-SSH-密钥"><a href="#检查现有-SSH-密钥" class="headerlink" title="检查现有 SSH 密钥"></a>检查现有 SSH 密钥</h1>]]></content>
+  </entry>
+  <entry>
+    <title>Ubuntu配置nodejs</title>
+    <url>/2020/04/11/Ubuntu%E9%85%8D%E7%BD%AEnodejs/</url>
+    <content><![CDATA[<h1 id="nodejs安装"><a href="#nodejs安装" class="headerlink" title="nodejs安装"></a>nodejs安装</h1><h2 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h2><p>1，从<a href="https://nodejs.org/zh-cn">nodejs官网</a>下载Linux二进制文件<span id="more"></span><br>2，解压缩二进制文件到&#x2F;usr&#x2F;local&#x2F;lib&#x2F;nodejs，这里以nodejsv12.16.2为例。<br><code>sudo mkdir -p /usr/local/lib/nodejs</code><br><code>sudo tar -xJvf node-v12.16.2-linux-x64.tar.xz -C /usr/local/lib/nodejs</code><br>3，设置环境变量，打开文件~&#x2F;.profile在最后添加如下代码<br><code>export PATH=/usr/local/lib/nodejs/node-v12.16.2-linux-x64/bin:$PATH</code><br>4，刷新配置文件<br><code>. ~/.profile</code><br>5，检查安装是否正确</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm version</span><br><span class="line">npx -v</span><br></pre></td></tr></table></figure>
+<p>上面关于Ubuntu配置nodejs描述了如何修改默认PATH以包括可执行文件的位置。<br>或者，可以将可执行文件符号链接到默认路径中，下面是如何将它们符号链接到 ：&#x2F;usr&#x2F;bin&#x2F;</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">ln</span> -s /usr/local/lib/nodejs/node-v12.16.2-linux-x64/bin/node /usr/local/bin/node</span><br><span class="line">sudo <span class="built_in">ln</span> -s /usr/local/lib/nodejs/node-v12.16.2-linux-x64/bin/npm /usr/local/bin/npm</span><br><span class="line">sudo <span class="built_in">ln</span> -s /usr/local/lib/nodejs/node-v12.16.2-linux-x64/bin/npx /usr/local/bin/npx</span><br></pre></td></tr></table></figure>
+<h2 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h2><p>node.js v12.x</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+<h2 id="NVM管理（推荐）"><a href="#NVM管理（推荐）" class="headerlink" title="NVM管理（推荐）"></a>NVM管理（推荐）</h2><h1 id="配置华为云源"><a href="#配置华为云源" class="headerlink" title="配置华为云源"></a>配置华为云源</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VScode+WSL开发环境</title>
+    <url>/2020/04/12/VScode-WSL%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<p>最近把VScode+WSL环境搞定了，很舒服，体验一下子上了一个档次，Windows和Linux无缝切换，博客也是在这个环境上搭建的。</p>
+<h1 id="WSL"><a href="#WSL" class="headerlink" title="WSL"></a>WSL</h1><p>1，Windows Subsystem for Linux（简称WSL）。在Windows上运行原生的Linux。<br>2，win10和Linux文件共享，可以相互操作<br>3，使用Linux的软件环境配合VScode进行开发</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WSL安装</title>
+    <url>/2020/04/27/WSL%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>WSL全称Windows Subsystem for Linux，适用于Linux的Windows子系统，被称为Linux最好的发行版。</p>
+<h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><p>必须运行 Windows 10 版本 2004 及更高版本（内部版本 19041 及更高版本）或 Windows 11。</p>
+<span id="more"></span>
+<h1 id="全新安装"><a href="#全新安装" class="headerlink" title="全新安装"></a>全新安装</h1><p>在管理员 PowerShell 或 Windows 命令提示符(CMD)中输入此命令，然后重启计算机来安装运行适用于 Linux 的 Windows 子系统 (WSL) 所需的全部内容。</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--install</span></span><br></pre></td></tr></table></figure>
+<p>此命令将执行以下操作：<br>-启用可选的 WSL 和虚拟机平台组件<br>-下载并安装最新 Linux 内核<br>-将 WSL 2 设置为默认值<br>-下载并安装 Ubuntu Linux 发行版（可能需要重新启动）<br>在此安装过程中，你将需要重启计算机。<br>此命令仅在完全未安装 WSL 时才有效，如果运行 <code>wsl --install</code> 并查看 WSL 帮助文本，请尝试运行 <code>wsl --list --online</code> 以查看可用发行版列表并运行 <code>wsl --install -d &lt;DistroName&gt;</code> 以安装发行版。</p>
+<h1 id="配置开发环境"><a href="#配置开发环境" class="headerlink" title="配置开发环境"></a>配置开发环境</h1><h2 id="设置用户名和密码"><a href="#设置用户名和密码" class="headerlink" title="设置用户名和密码"></a>设置用户名和密码</h2><p>使用 WSL 安装 Linux 发行版的过程完成后，使用“开始”菜单打开该发行版（默认情况下为 Ubuntu）。 系统将要求你为 Linux 发行版创建“用户名”和“密码”。<br>-此用户名和密码特定于安装的每个单独的 Linux 分发版，与 Windows 用户名无关。<br>-请注意，输入 密码时，屏幕上不会显示任何内容。 这称为盲目键入。 不会看到正在键入的内容，这完全正常。<br>-创建用户名和密码后，该帐户将是分发版的默认用户，并将在启动时自动登录。<br>-此帐户将被视为 Linux 管理员，能够运行 sudo (Super User Do) 管理命令。<br>-在 WSL 上运行的每个 Linux 发行版都有其自己的 Linux 用户帐户和密码。 每当添加分发版、重新安装或重置时，都必须配置一个 Linux 用户帐户。</p>
+<h2 id="配置华为云镜像源"><a href="#配置华为云镜像源" class="headerlink" title="配置华为云镜像源"></a>配置华为云镜像源</h2><p><a href="https://mirrors.huaweicloud.com/home">华为云镜像源</a></p>
+<h3 id="备份系统镜像源配置文件"><a href="#备份系统镜像源配置文件" class="headerlink" title="备份系统镜像源配置文件"></a>备份系统镜像源配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> -a /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure>
+<h3 id="修改镜像源配置文件"><a href="#修改镜像源配置文件" class="headerlink" title="修改镜像源配置文件"></a>修改镜像源配置文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo sed -i <span class="string">&quot;s@http://.*archive.ubuntu.com@http://repo.huaweicloud.com@g&quot;</span> /etc/apt/sources.list</span><br><span class="line">sudo sed -i <span class="string">&quot;s@http://.*security.ubuntu.com@http://repo.huaweicloud.com@g&quot;</span> /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<h3 id="更新软件源"><a href="#更新软件源" class="headerlink" title="更新软件源"></a>更新软件源</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+        <tag>WSL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows10 2004体验</title>
+    <url>/2020/05/13/Windows10-2004%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[<p>Windows10 2004版本正式发布了，我在第一时间下载安装体验了，有亮点也有失望。</p>
+<h1 id="失望"><a href="#失望" class="headerlink" title="失望"></a>失望</h1><p>1，新版小娜在国内用不了了，虽然也没有谁会用（目前是这样，之后会不会支持不清楚）<br>2，基于chromium的edge并未预装到新版的win10中（这是我认为最大的遗憾）<br>3，开始菜单并不是传闻中的新版开始菜单</p>
+<h1 id="亮点"><a href="#亮点" class="headerlink" title="亮点"></a>亮点</h1><p>1，针对硬盘优化，加入一项全新的硬盘负载检测机制，使得Windows10不再卡<br>2，开始菜单ui风格的统一<br>3，WSL升级到WSL2，这对编程开发者是一大利好，让开发效率更快。（这项是我最期待的）<br>4，新增云下载功能<br>5，不在提供32位系统的支持</p>
+]]></content>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows自用软件清单</title>
+    <url>/2020/03/21/Windows%E8%87%AA%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/</url>
+    <content><![CDATA[<h2 id="软件部分"><a href="#软件部分" class="headerlink" title="软件部分"></a>软件部分</h2><p>1，浏览器：基于chromium的最新版edge浏览器或者Google chrome<br>2，office：office 2021  <span id="more"></span><br>3，解压缩软件：7-zip<br>4，IDE：VS2022<br>5，文本编辑器：VScode<br>6，远程软件：ToDesk<br>7，视频播放器：potplayer<br>8，下载器：迅雷<br>9，通讯社交：微信,QQ<br>10，markdown文本编辑器：Typora<br>11，思维导图：XMind</p>
+<hr>
+<h2 id="小工具部分"><a href="#小工具部分" class="headerlink" title="小工具部分"></a>小工具部分</h2><p>1，卸载工具：geek<br>2，电脑参数查看工具：cpu-z，gpu-z</p>
+]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>清单</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一些实用的网站（不定时更新）</title>
+    <url>/2020/04/07/%E4%B8%80%E4%BA%9B%E5%AE%9E%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>1，MikuTools：<a href="https://tools.miku.ac/">https://tools.miku.ac</a><br>2，果核剥壳：<a href="https://www.ghpym.com/">https://www.ghpym.com</a>  <span id="more"></span><br>3，少数派：<a href="https://sspai.com/">https://sspai.com</a><br>4，MSDN：<a href="https://next.itellyou.cn/">https://next.itellyou.cn</a><br>5，菜鸟教程：<a href="https://www.runoob.com/">https://www.runoob.com</a><br>6，NO视频：<a href="https://www.novipnoad.com/">https://www.novipnoad.com</a><br>7，能不能好好说话：<a href="https://lab.magiconch.com/nbnhhsh/">https://lab.magiconch.com/nbnhhsh/</a><br>8，MDN：<a href="https://developer.mozilla.org/zh-CN/">https://developer.mozilla.org/zh-CN/</a></p>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>清单</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>初识物联网</title>
+    <url>/2022/09/20/%E5%88%9D%E8%AF%86%E7%89%A9%E8%81%94%E7%BD%91/</url>
+    <content><![CDATA[<h1 id="物联网初探"><a href="#物联网初探" class="headerlink" title="物联网初探"></a>物联网初探</h1><h2 id="物联网（Internet-of-Things）早期概念定义"><a href="#物联网（Internet-of-Things）早期概念定义" class="headerlink" title="物联网（Internet of Things）早期概念定义"></a>物联网（Internet of Things）早期概念定义</h2><p>指依托RFID（射频识别）技术和设备，按预定的通信协议与互联网结合，使物品信息实现智能化识别和管理，实现物品信息互联、可交换和共享而形成的网络。</p>
+<h2 id="物联网发展历程"><a href="#物联网发展历程" class="headerlink" title="物联网发展历程       "></a>物联网发展历程       <span id="more"></span></h2><p>2005 国际电信联盟引用物联网概念<br>2008 IBM提出“智慧地球”<br>2009 “感知中国”<br>2013 德国“工业4.0”<br>2015 “中国制造2025”发布</p>
+<h2 id="发展历史时期划分"><a href="#发展历史时期划分" class="headerlink" title="发展历史时期划分"></a>发展历史时期划分</h2><p>1999-2013 概念期<br>2014-2016 发展期<br>2016-至今 成熟期</p>
+<h2 id="物联网层次划分"><a href="#物联网层次划分" class="headerlink" title="物联网层次划分"></a>物联网层次划分</h2><p>从云—管—端的逻辑体系来划分，物联网的层次可以可简单划分为四个层次<br>应用层：负责数据呈现及客户交互<br>平台层：负责设备通信管理、数据存储、业务规划等<br>网络层：负责终端接入和数据传输<br>感知层：负责信息收集和信号处理</p>
+<h2 id="物联网垂直行业应用划分"><a href="#物联网垂直行业应用划分" class="headerlink" title="物联网垂直行业应用划分"></a>物联网垂直行业应用划分</h2><p>公共事业物联网<br>工业物联网<br>车联网<br>智慧家庭物联网</p>
+<h1 id="稳定可靠的有线通信"><a href="#稳定可靠的有线通信" class="headerlink" title="稳定可靠的有线通信"></a>稳定可靠的有线通信</h1><p>以太网：现有局域网采用的最通用的通信协议标准，包括标准以太网、快速以太网、10G以太网；<br>RS-232：EIA制定的异步传输标准接口；<br>RS-485：解决232不能实现联网功能发展起来的；<br>M-Bus：用于非电力户用仪表传输的欧洲总线标准，基于OSI参考模型；<br>PLC：电力线通信；<br>有线通信技术具有稳定性强、可靠性高的优点，缺点是受限于传输媒介。</p>
+<h1 id="百家争鸣的无线通信"><a href="#百家争鸣的无线通信" class="headerlink" title="百家争鸣的无线通信"></a>百家争鸣的无线通信</h1><p>主要分为两类：<br>蜂窝移动通信——2G、3G、4G通信技术（GPRS）<br>短距无线通信技术——蓝牙（Bluetooth）、Wi-Fi、ZigBee、Z-Wave<br>蓝牙：2.4-2.485GHz的ISM波段的无线电波、最高数据传输速率1Mbps、最大传输距离为10cm-10m的数据传输（通过增加发射传输功率传输距离可达到100m)。其优点是速率快、低功耗、安全性高，缺点是网络节点少，不适合多点布控。<br>Wi-Fi：Wi-Fi是一种允许电子设备连接到一个无线局域网（WLAN）的技术，通常使用2.4G UHF或5G SHF ISM射频频段。其优点是范围覆盖广，数据传输效率快，缺点是传输安全性不好，稳定性差，功耗略高。<br>ZigBee：ZigBee是基于IEEE802.15.4标准的低功耗局域网协议，广泛应用于工业，智慧家庭等中。其优点是近距离、低复杂度、自组织、低功耗、低数据速率，缺点是物体阻挡后信号会衰减、不同芯片兼容性较差、网络较灵活、不易维护。<br>Z-Wave：Z-Wave是一种新兴的基于射频的、低成本、低功耗、高可靠的短距离无线通信技术。其优点是网络结构简单、低功耗、低成本、可靠性高，缺点是速率较低，标准不开放，芯片不能通过Sigma Designs这唯一来源获取。</p>
+<h1 id="万物互联的LPWA"><a href="#万物互联的LPWA" class="headerlink" title="万物互联的LPWA"></a>万物互联的LPWA</h1><p>LPWA（Low Power Wide Area）低功率广域网<br>SigFox：Sigfox公司在全球部署低功耗广域网（LPWA），提供物联网（IoT）连接服务，用户设备集成支持Sigfox协议的射频模块或者芯片，开通连接服务后，即可连接到Sigfox网络。<br>LoRa：LoRa是semtech公司创建的低功耗局域网无线标准，我们知道，低功耗一般很难覆盖远距离，而远距离一般功耗高，LoRa的名字翻译就是远距离无线电（Long Range Radio），它最大特点就是在同样的功耗条件下比其他无线方式传播的距离更远，实现了低功耗和远距离的统一，它在同样的功耗下比传统的无线射频通信距离扩大3-5倍。<br>NB-IoT：窄带物联网（Narrow Band Internet of Things, NB-IoT）成为万物互联网络的一个重要分支。NB-IoT构建于蜂窝网络，只消耗大约180kHz的带宽，可直接部署于GSM网络、UMTS网络或LTE网络，以降低部署成本、实现平滑升级。 NB-IoT是IoT领域一个新兴的技术，支持低功耗设备在广域网的蜂窝数据连接，也被叫作低功耗广域网(LPWAN)。NB-IoT支持待机时间长、对网络连接要求较高设备的高效连接。据说NB-IoT设备电池寿命可以提高至少10年，同时还能提供非常全面的室内蜂窝数据连接覆盖。</p>
+<h1 id="物联网关，汇聚回传"><a href="#物联网关，汇聚回传" class="headerlink" title="物联网关，汇聚回传"></a>物联网关，汇聚回传</h1><h2 id="安全可靠的工业物联网关"><a href="#安全可靠的工业物联网关" class="headerlink" title="安全可靠的工业物联网关"></a>安全可靠的工业物联网关</h2><p>物联网网关的应运条件：为了应对小范围大量设备接入和复杂的环境。<br>物联网网关处于网络层，负责上行回传、下行汇聚。<br>工业物联网网关的条件：<br>1.传统网络设备无法满足物联网现场工业级严格要求。例如，工作温度、防尘、防水、防电磁干扰。<br>2.工业接口协议众多对网关提出了苛刻的要求。例如，需要工业总线：RS-485、Modbus；无线通信：ZigBee、RF等通信方式。<br>3.面对开放网络的安全冲击。容易被攻击。<br>4.物联网网络运维复杂度高。站点分散，部署工作量大，管理困难。<br>工业物理网支持的边缘计算：边缘计算是在靠近终端设备或数据源头的边缘节点，融合联接、计算、存储、控制和应用等核心能力的开放平台，满足用户实时、智能、数据聚合和安全需求。<br>边缘计算类似于人的脊髓中枢神经，而云计算类似于人的大脑中枢神经。<br>两个下行通信技术：PLC、RF Mesh<br>PLC：通信线缆与供电线缆二合一，降低了部署成本，支持设备自组网，设备上电即可使用。<br>传统PLC问题:电磁干扰，噪声过大。<br>RF Mesh：中继信号，扩展无线覆盖范围，支持网络自组织、自修复、流量自平衡，提升贷宽，降低发射功率。</p>
+<h2 id="卓有成效的物联网关解决方案"><a href="#卓有成效的物联网关解决方案" class="headerlink" title="卓有成效的物联网关解决方案"></a>卓有成效的物联网关解决方案</h2><p>电力物联网、城市照明物联网、车联网等<br>华为电力物联网解决方案：<br>困扰：<br>1.业务监管不足导致经济损失严重。<br>　高温过载、用电大户监督、无实时分析。<br>2.运营效率低人力成本高<br>　没有有效手段降低线路损耗；电费收缴难，周期长，拖欠严重；用户用电情况不透明，投诉多；<br>３.业务决策不实时不准确<br>    停电管理无序；用电线路改造无依据；业务的决策缺乏实时数据支持。<br>智能电网趋势：<br>集中部署与云化架构<br>软件定义智能电网<br>配用电一体化<br>微网应用与互动<br>家庭能源管理<br>华为抄表协议：DLMS、Modbus<br>主要价值：电力业务与应用<br>　　<br>华为电力物联网解决方案模块：<br>　billing（计费)　　　　　Prepay(预付费）<br>　MDM（电表数据管理）　CRM（ 客户关系管理）<br>典型应用-城市照明物联网：挑战：高昂的能源消耗、高运维管理成本、城市照明服务质量。<br>华为物联网解决方案：涵盖感知层、网络层、平台层、应用层<br>感知层：<br>外置型路灯控制器AR501L1Rc<br>符合ANSI C136.41标准接口<br>开关调光、制订计划、采集数据<br>网络层：通过RF Mesh、ZigBee通信技术汇报给工业物联网关，然后通过GPRS&#x2F;3G&#x2F;4G发送给IoT平台。<br>平台层：基于EEM平台 四大核心功能：设备管理、计划&#x2F;策略管理、远程升级管理、数据存储<br>应用层：<br>　基于GIS的路灯管理应用软件CityConnect平台<br>　主要功能：设备运维管理、设备告警、GIS地图监控、数据统计、寿命管理。<br>总结：获得低成本的海量路灯连接，降低安装和维护成本，按需照明，降低路灯的能源消耗，保障系统的可靠运行</p>
+<h2 id="智能互联的家庭智能网关"><a href="#智能互联的家庭智能网关" class="headerlink" title="智能互联的家庭智能网关"></a>智能互联的家庭智能网关</h2><h3 id="过去：点状网络"><a href="#过去：点状网络" class="headerlink" title="过去：点状网络"></a>过去：点状网络</h3><p>家庭网络终端：调制解调器（SmartAX MT800）<br>业务：高宽带</p>
+<h3 id="现在：星型网络"><a href="#现在：星型网络" class="headerlink" title="现在：星型网络"></a>现在：星型网络</h3><p>家庭网络终端：家庭网关&#x2F;光猫（HG8245H）<br>业务：高宽带、家庭网关、IPTV机顶盒</p>
+<h3 id="未来：网状结构"><a href="#未来：网状结构" class="headerlink" title="未来：网状结构"></a>未来：网状结构</h3><p>家庭网络终端：智能网关、IPTV&#x2F;OTT机顶盒、家庭WiFi网络&#x2F;家庭物联网络、家庭物联设备<br>业务：智能ONT（）HG3025&#x2F;LS2025）在这里插入图片描述</p>
+<h3 id="家庭网络："><a href="#家庭网络：" class="headerlink" title="家庭网络："></a>家庭网络：</h3><p>关键业务：<br>智能提速：能够识别用户的提速请求，实时上传视频、上行带宽加速<br>家庭WI-FI无缝覆盖：以太网AP扩展Wi-Fi、PLC（电力猫）扩展Wi-Fi、无线中继器扩展Wi-Fi<br>智能互联与智能业务：同一接入标准、同一UI界面<br>智能运维：可视化管理、离线上线的通知</p>
+]]></content>
+      <tags>
+        <tag>物联网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>家庭路由器组网</title>
+    <url>/2020/07/05/%E5%AE%B6%E5%BA%AD%E8%B7%AF%E7%94%B1%E5%99%A8%E7%BB%84%E7%BD%91/</url>
+    <content><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>家里路由器信号</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>我的第一篇博客</title>
+    <url>/2020/03/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>我的第一篇博客，于2020年3月20日发出。<br>留个纪念！<br>博客已基本完善。<br>博客内容不定时更新。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>旧居有感</title>
+    <url>/2020/04/04/%E6%97%A7%E5%B1%85%E6%9C%89%E6%84%9F/</url>
+    <content><![CDATA[<p>旧居重游<br>忆儿时多少事<br>犹如昨日<br>不禁思绪万千<br>感慨时光流逝</p>
+]]></content>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>现实世界数字化，虚拟世界现实化</title>
+    <url>/2020/04/24/%E7%8E%B0%E5%AE%9E%E4%B8%96%E7%95%8C%E6%95%B0%E5%AD%97%E5%8C%96%EF%BC%8C%E8%99%9A%E6%8B%9F%E4%B8%96%E7%95%8C%E7%8E%B0%E5%AE%9E%E5%8C%96/</url>
+    <content><![CDATA[<p>  5G的到来，意味着高带宽，低时延，高速率的时代的来临。以5G为起点，未来的世界将会是虚实结合的世界。<span id="more"></span><br>依托5G技术，AR，MR，XR这些技术会迅速的发展起来，未来的世界会朝着现实世界数字化，虚拟世界现实化发展。未来，可以在数字世界中找到另外一个自己，它可以根据现实世界中自己的思维永久的生存在数字世界中，或许这就是人的另一种永生吧。在现实世界中，人们可以通过工具看到现实世界中不存在的另一个世界，这个世界会给生活带来不一样的体验。<br>但是5G仅仅是未来新的开始，新的起点而已，仅此而已。5G不足以改变这个世界，但是5G之后，未来已来。<br>现在文盲的标准是识不识字，在我看来，未来，文盲的标准是会不会编程，未来将会是全民编程的时代。<br>上文中提到的数字世界保存我们的思维进而永久存在于数字世界，这还牵扯到另外一个非常前沿的技术——脑机接口。</p>
+]]></content>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>聊聊Android和iOS</title>
+    <url>/2020/05/11/%E8%81%8A%E8%81%8AAndroid%E5%92%8CiOS/</url>
+    <content><![CDATA[<p>提到Android和iOS，人们的固有印象是，iOS流畅不卡顿，Android用久了就会卡顿，但是大多数人都不知道产生这种结果的原因是什么。<br>今天我就从这两大系统的底层来解释一下，在讲解之前，先介绍一下Unix和Linux，Linux属于类Unix系统，Unix和Linux都是用C语言编写的，C语言由于自身的简单，高效，灵活，使得Unix和Linux的运行效率高。回到正题，其中iOS是基于Unix开发的操作系统，Android是基于Linux开发的操作系统，但是Android虽然内核是基于Linux，但是Android真正运行在Java虚拟机上，了解或学习过Java的应该知道，Java是一个全平台的语言，因为它有自己的虚拟机，也就是因为这个虚拟机，导致它需要消耗大量内存，真就是成也虚拟机，败也虚拟机。这就导致iOS在底层就占据Android无法比拟的优势。</p>
+]]></content>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自我学习路线</title>
+    <url>/2020/04/10/%E8%87%AA%E6%88%91%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</url>
+    <content><![CDATA[<p>Windows10–&gt;硬件–&gt;VS2019–&gt;C语言–&gt;b\s–&gt;Java–&gt;mySQL–&gt;Linux–&gt;Java web–&gt;GOF Java高级部分–&gt;框架–&gt;案例–&gt;算法和数据结构</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>语录（不定时更新）</title>
+    <url>/2020/04/01/%E8%AF%AD%E5%BD%95%EF%BC%88%E4%B8%8D%E5%AE%9A%E6%97%B6%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="1，"><a href="#1，" class="headerlink" title="1，"></a>1，</h1><p>人生的失败，不是因为你的财富不成功而失败。<br>而是你曾经想要做的事情，到年迈之后没有做过，这才是失败。<span id="more"></span></p>
+<h1 id="2，请你一定不要停下来-成为你想成为的人"><a href="#2，请你一定不要停下来-成为你想成为的人" class="headerlink" title="2，请你一定不要停下来 成为你想成为的人"></a>2，请你一定不要停下来 成为你想成为的人</h1><p>我知道你最近很累<br>是那种看不见的<br>面对未来那种无力感<br>但请你一定不要停下来<br>因为你的人生不可能就止于此了<br>再坚持一下一切都会慢慢好起来的</p>
+<h1 id="3，"><a href="#3，" class="headerlink" title="3，"></a>3，</h1><p>一个人<br>想要活得好<br>很容易<br>但要活成<br>想要的模样<br>却很累</p>
+<h1 id="4，"><a href="#4，" class="headerlink" title="4，"></a>4，</h1><p>如果尖锐的批评完全消失，温和的批评将会变得刺耳。<br>如果温和的批评也不被允许，沉默将被认为居心叵测。<br>如果沉默也不再允许，赞扬不够卖力将是一种罪行。<br>如果只允许一种声音存在，那么，唯一存在的那个声音就是谎言。</p>
+<h1 id="5，"><a href="#5，" class="headerlink" title="5，"></a>5，</h1><p>不敢去做，你永远都做不到<br>不敢去想，你连想到想不到</p>
+<h1 id="6，"><a href="#6，" class="headerlink" title="6，"></a>6，</h1><p>兴趣不能当饭吃</p>
+<h1 id="7，"><a href="#7，" class="headerlink" title="7，"></a>7，</h1><p>我们为什么学习，因为无知<br>但学习得越深，越感到自己的无知</p>
+<p>承认自己的无知乃是开启智慧的大门。<br>吾生也有涯，而知也无涯。以有涯随无涯，殆已。</p>
+<h1 id="8，"><a href="#8，" class="headerlink" title="8，"></a>8，</h1><p>所有人都可以瞧不起我，但唯独自己不能瞧不起自己。</p>
+<h1 id="9，"><a href="#9，" class="headerlink" title="9，"></a>9，</h1><p>Just do it<br>Nothing is impossible</p>
+<h1 id="10，"><a href="#10，" class="headerlink" title="10，"></a>10，</h1><p>你终将成为你正在成为的人，而不是想成为的人。</p>
+<h1 id="11，"><a href="#11，" class="headerlink" title="11，"></a>11，</h1><p>愿中国青年都摆脱冷气，只是向上走，不必听自暴自弃者流的话。能做事的做事，能发声的发声。有一分热，发一分光，就令萤火一般，也可以在黑暗里发一点光，不必等候炬火。此后如竟没有炬火：我便是唯一的光。 ——鲁迅</p>
+<h1 id="12，"><a href="#12，" class="headerlink" title="12，"></a>12，</h1><p>做一个懂得沉默的人，有些事自己心里清楚就行，没必要说出来让大家都知道。</p>
+<h1 id="13，"><a href="#13，" class="headerlink" title="13，"></a>13，</h1><p>没必要让所有人都知道真实的你，或者是你没有必要不停地向人说其实我是一个什么样的人。因为这是无效的，人们还是只会愿意看到他们希望看到的。</p>
+<h1 id="14，"><a href="#14，" class="headerlink" title="14，"></a>14，</h1><p>一只船孤独的航行在海上，它既不寻求幸福，也不逃避幸福，它只是向前航行，底下是沉静碧蓝的大海，而头顶是金色的太阳。</p>
+<h1 id="15，"><a href="#15，" class="headerlink" title="15，"></a>15，</h1><p>他用青春换取力量，从绝望中凿出成功，但如同青春不再，生活也卷走了他青涩的爱。</p>
+<h1 id="16，"><a href="#16，" class="headerlink" title="16，"></a>16，</h1><p>为什么我的眼里常含泪水<br>因为我被这生活虐的深沉</p>
+<h1 id="17，"><a href="#17，" class="headerlink" title="17，"></a>17，</h1><p>相关性里面永远会有例外<br>而个例永远无法反驳比例</p>
+<h1 id="18，"><a href="#18，" class="headerlink" title="18，"></a>18，</h1><p>Write the code, change the world.   ——Microsoft</p>
+<h1 id="19，"><a href="#19，" class="headerlink" title="19，"></a>19，</h1><p>工程化，让今天大量的可重复性劳动变得智能化，投入业务和技术的深度：思考。</p>
+<h1 id="20，"><a href="#20，" class="headerlink" title="20，"></a>20，</h1><p>记住，当你知道的越多，你看透事情越透彻的时候，你可能已经不再参与了。</p>
+<h1 id="21，"><a href="#21，" class="headerlink" title="21，"></a>21，</h1><p>瞎搞，只会让自己停留。</p>
+<h1 id="22，"><a href="#22，" class="headerlink" title="22，"></a>22，</h1><p>如果脑子炸了，想想今天学了多久了，超过了负荷就必须休息，否则再研究也是一头雾水，睡一觉，天明了喝口水，兴许思路就来了。</p>
+<h1 id="23，"><a href="#23，" class="headerlink" title="23，"></a>23，</h1><p>世界上最可怕最可悲的是不能承认别人的强，而是一味活在自己的井底世界，吹嘘自己的完美。</p>
+<h1 id="24，"><a href="#24，" class="headerlink" title="24，"></a>24，</h1><p>今天你可能觉得学了这个东西没有用，我告诉你那是不可能的！总有一天会有用的，当你要用且不求于人时，此时你会感谢过去的自己。</p>
+<h1 id="25，"><a href="#25，" class="headerlink" title="25，"></a>25，</h1><p>只有在独处时安然自得，才能在喧嚣时淡然自若。</p>
+<h1 id="26，"><a href="#26，" class="headerlink" title="26，"></a>26，</h1><p>每个人，都有自己的思想与理想，一个人，无法将自己的思想与理想强加于他人，反之亦如此。<br>但是思想与理想是可以用来分享的。我喜欢思想与理想交流与碰撞所带来的兴奋与快感。</p>
+<h1 id="27"><a href="#27" class="headerlink" title="27,"></a>27,</h1><p>效率，不是在单位时间内完成更多事，而是在自我满足的前提下有足够多的可自由支配的时间且不得不做的事尽可能少。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>谷歌退出中国十周年</title>
+    <url>/2020/03/23/%E8%B0%B7%E6%AD%8C%E9%80%80%E5%87%BA%E4%B8%AD%E5%9B%BD%E5%8D%81%E5%91%A8%E5%B9%B4/</url>
+    <content><![CDATA[<p>今天是2020年3月23日，一个很平常的日子，但是在十年前的今天，也就是2010年3月23日，Google宣布退出中国市场。<br>我并不知道谷歌为什么退出中国，但不可否认的是，Google搜索是目前最好的搜索引擎，没有之一。</p>
+]]></content>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+</search>
