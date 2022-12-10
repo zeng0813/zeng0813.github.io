@@ -68,6 +68,19 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Linux扩容</title>
+    <url>/2022/12/03/Linux%E6%89%A9%E5%AE%B9/</url>
+    <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>lsblk</li>
+</ul>
+<p><code>lsblk</code></p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SSH</title>
     <url>/2022/01/23/SSH/</url>
     <content><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>从 2021 年 8 月 13 日开始，在对 Git 操作进行身份验证时，我们将不再接受帐户密码，并且需要使用基于令牌的身份验证，例如个人访问令牌（对于开发人员）或 OAuth 或 GitHub 应用安装令牌（对于集成商），用于 GitHub.com 上所有经过身份验证的 Git 操作。您也可以在自己喜欢的地方继续使用 SSH 密钥。<span id="more"></span></p>
@@ -98,16 +111,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VScode+WSL开发环境</title>
-    <url>/2020/04/12/VScode-WSL%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<p>最近把VScode+WSL环境搞定了，很舒服，体验一下子上了一个档次，Windows和Linux无缝切换，博客也是在这个环境上搭建的。</p>
-<h1 id="WSL"><a href="#WSL" class="headerlink" title="WSL"></a>WSL</h1><p>1，Windows Subsystem for Linux（简称WSL）。在Windows上运行原生的Linux。<br>2，win10和Linux文件共享，可以相互操作<br>3，使用Linux的软件环境配合VScode进行开发</p>
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WSL安装</title>
     <url>/2020/04/27/WSL%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<p>WSL全称Windows Subsystem for Linux，适用于Linux的Windows子系统，被称为Linux最好的发行版。</p>
@@ -125,6 +128,16 @@
       <tags>
         <tag>Linux</tag>
         <tag>WSL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VScode+WSL开发环境</title>
+    <url>/2020/04/12/VScode-WSL%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<p>最近把VScode+WSL环境搞定了，很舒服，体验一下子上了一个档次，Windows和Linux无缝切换，博客也是在这个环境上搭建的。</p>
+<h1 id="WSL"><a href="#WSL" class="headerlink" title="WSL"></a>WSL</h1><p>1，Windows Subsystem for Linux（简称WSL）。在Windows上运行原生的Linux。<br>2，win10和Linux文件共享，可以相互操作<br>3，使用Linux的软件环境配合VScode进行开发</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -188,15 +201,15 @@
       </tags>
   </entry>
   <entry>
-    <title>家庭路由器组网</title>
-    <url>/2020/07/05/%E5%AE%B6%E5%BA%AD%E8%B7%AF%E7%94%B1%E5%99%A8%E7%BB%84%E7%BD%91/</url>
-    <content><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>家里路由器信号</p>
-]]></content>
-  </entry>
-  <entry>
     <title>我的第一篇博客</title>
     <url>/2020/03/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>我的第一篇博客，于2020年3月20日发出。<br>留个纪念！<br>博客已基本完善。<br>博客内容不定时更新。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>家庭路由器组网</title>
+    <url>/2020/07/05/%E5%AE%B6%E5%BA%AD%E8%B7%AF%E7%94%B1%E5%99%A8%E7%BB%84%E7%BD%91/</url>
+    <content><![CDATA[<h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>家里路由器信号</p>
 ]]></content>
   </entry>
   <entry>
@@ -297,6 +310,7 @@
 <h1 id="27，"><a href="#27，" class="headerlink" title="27，"></a>27，</h1><p>效率，不是在单位时间内完成更多事，而是在自我满足的前提下有足够多的可自由支配的时间且不得不做的事尽可能少。</p>
 <h1 id="28，"><a href="#28，" class="headerlink" title="28，"></a>28，</h1><p>没必要把你知道的所有事都说出来，人们不喜欢身边的人比自己懂得多，你说得再正确他们也不会听，这是常态。成长就是慢慢学会了闭嘴，然后照顾好自己。</p>
 <h1 id="29，"><a href="#29，" class="headerlink" title="29，"></a>29，</h1><p>每当我们看到一些美妙的设计的时候，很多人心里面会有一种冲动，这种冲动会让你们想去创造一些新的东西，创造一些美妙的事物。</p>
+<h1 id="30，"><a href="#30，" class="headerlink" title="30，"></a>30，</h1><p>谅腐草之荧光,怎及天心之皓月。</p>
 <h1 id="不定时更新"><a href="#不定时更新" class="headerlink" title="不定时更新"></a>不定时更新</h1>]]></content>
       <tags>
         <tag>语录</tag>
