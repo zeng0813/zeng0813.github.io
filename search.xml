@@ -44,6 +44,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux扩容</title>
+    <url>/2022/12/03/Linux%E6%89%A9%E5%AE%B9/</url>
+    <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>lsblk</li>
+</ul>
+<p><code>lsblk</code></p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GPIO配置</title>
     <url>/2020/10/13/GPIO%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="LCD12864接线说明"><a href="#LCD12864接线说明" class="headerlink" title="LCD12864接线说明"></a>LCD12864接线说明</h1><p>SC32F5832 -&gt; LCD12864<br>PC6 	  -&gt; CN3-RS<br>PC4 	  -&gt; CN3-RW<br>PC3 	  -&gt; CN3-E<br>PC7 	  -&gt; CN3-PSB<br>PC15 	  -&gt; CN3-RST</p>
@@ -66,19 +79,6 @@
 <h2 id="GPIO初始化"><a href="#GPIO初始化" class="headerlink" title="GPIO初始化"></a>GPIO初始化</h2><p>GPIO_init()</p>
 <h1 id="4-4矩阵键盘接线说明"><a href="#4-4矩阵键盘接线说明" class="headerlink" title="4*4矩阵键盘接线说明"></a>4*4矩阵键盘接线说明</h1><p>SC32F5832 -&gt; KeyBoard<br>PB8 	  -&gt; R1<br>PB9 	  -&gt; R2<br>PB10 	  -&gt; R3<br>PB11 	  -&gt; R4<br>PB12 	  -&gt; C1<br>PB13 	  -&gt; C2<br>PB14 	  -&gt; C3<br>PB15 	  -&gt; C4</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Linux扩容</title>
-    <url>/2022/12/03/Linux%E6%89%A9%E5%AE%B9/</url>
-    <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ul>
-<li>lsblk</li>
-</ul>
-<p><code>lsblk</code></p>
-]]></content>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
   </entry>
   <entry>
     <title>SSH</title>
@@ -141,6 +141,18 @@
       </tags>
   </entry>
   <entry>
+    <title>一些实用的网站（不定时更新）</title>
+    <url>/2020/04/07/%E4%B8%80%E4%BA%9B%E5%AE%9E%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
+    <content><![CDATA[<p>1，MikuTools：<a href="https://tools.miku.ac/">https://tools.miku.ac</a><br>2，果核剥壳：<a href="https://www.ghpym.com/">https://www.ghpym.com</a>  <span id="more"></span><br>3，少数派：<a href="https://sspai.com/">https://sspai.com</a><br>4，MSDN：<a href="https://next.itellyou.cn/">https://next.itellyou.cn</a><br>5，菜鸟教程：<a href="https://www.runoob.com/">https://www.runoob.com</a><br>6，NO视频：<a href="https://www.novipnoad.com/">https://www.novipnoad.com</a><br>7，能不能好好说话：<a href="https://lab.magiconch.com/nbnhhsh/">https://lab.magiconch.com/nbnhhsh/</a><br>8，MDN：<a href="https://developer.mozilla.org/zh-CN/">https://developer.mozilla.org/zh-CN/</a></p>
+]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>清单</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows10 2004体验</title>
     <url>/2020/05/13/Windows10-2004%E4%BD%93%E9%AA%8C/</url>
     <content><![CDATA[<p>Windows10 2004版本正式发布了，我在第一时间下载安装体验了，有亮点也有失望。</p>
@@ -166,15 +178,18 @@
       </tags>
   </entry>
   <entry>
-    <title>一些实用的网站（不定时更新）</title>
-    <url>/2020/04/07/%E4%B8%80%E4%BA%9B%E5%AE%9E%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/</url>
-    <content><![CDATA[<p>1，MikuTools：<a href="https://tools.miku.ac/">https://tools.miku.ac</a><br>2，果核剥壳：<a href="https://www.ghpym.com/">https://www.ghpym.com</a>  <span id="more"></span><br>3，少数派：<a href="https://sspai.com/">https://sspai.com</a><br>4，MSDN：<a href="https://next.itellyou.cn/">https://next.itellyou.cn</a><br>5，菜鸟教程：<a href="https://www.runoob.com/">https://www.runoob.com</a><br>6，NO视频：<a href="https://www.novipnoad.com/">https://www.novipnoad.com</a><br>7，能不能好好说话：<a href="https://lab.magiconch.com/nbnhhsh/">https://lab.magiconch.com/nbnhhsh/</a><br>8，MDN：<a href="https://developer.mozilla.org/zh-CN/">https://developer.mozilla.org/zh-CN/</a></p>
+    <title>我的第一篇博客</title>
+    <url>/2020/03/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>我的第一篇博客，于2020年3月20日发出。<br>留个纪念！<br>博客已基本完善。<br>博客内容不定时更新。</p>
 ]]></content>
-      <categories>
-        <category>网站</category>
-      </categories>
+  </entry>
+  <entry>
+    <title>旧居有感</title>
+    <url>/2020/04/04/%E6%97%A7%E5%B1%85%E6%9C%89%E6%84%9F/</url>
+    <content><![CDATA[<p>旧居重游<br>忆儿时多少事<br>犹如昨日<br>不禁思绪万千<br>感慨时光流逝</p>
+]]></content>
       <tags>
-        <tag>清单</tag>
+        <tag>杂谈</tag>
       </tags>
   </entry>
   <entry>
@@ -207,15 +222,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>我的第一篇博客</title>
-    <url>/2020/03/20/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>我的第一篇博客，于2020年3月20日发出。<br>留个纪念！<br>博客已基本完善。<br>博客内容不定时更新。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>旧居有感</title>
-    <url>/2020/04/04/%E6%97%A7%E5%B1%85%E6%9C%89%E6%84%9F/</url>
-    <content><![CDATA[<p>旧居重游<br>忆儿时多少事<br>犹如昨日<br>不禁思绪万千<br>感慨时光流逝</p>
+    <title>现实世界数字化，虚拟世界现实化</title>
+    <url>/2020/04/24/%E7%8E%B0%E5%AE%9E%E4%B8%96%E7%95%8C%E6%95%B0%E5%AD%97%E5%8C%96%EF%BC%8C%E8%99%9A%E6%8B%9F%E4%B8%96%E7%95%8C%E7%8E%B0%E5%AE%9E%E5%8C%96/</url>
+    <content><![CDATA[<p>  5G的到来，意味着高带宽，低时延，高速率的时代的来临。以5G为起点，未来的世界将会是虚实结合的世界。<span id="more"></span><br>依托5G技术，AR，MR，XR这些技术会迅速的发展起来，未来的世界会朝着现实世界数字化，虚拟世界现实化发展。未来，可以在数字世界中找到另外一个自己，它可以根据现实世界中自己的思维永久的生存在数字世界中，或许这就是人的另一种永生吧。在现实世界中，人们可以通过工具看到现实世界中不存在的另一个世界，这个世界会给生活带来不一样的体验。<br>但是5G仅仅是未来新的开始，新的起点而已，仅此而已。5G不足以改变这个世界，但是5G之后，未来已来。<br>现在文盲的标准是识不识字，在我看来，未来，文盲的标准是会不会编程，未来将会是全民编程的时代。<br>上文中提到的数字世界保存我们的思维进而永久存在于数字世界，这还牵扯到另外一个非常前沿的技术——脑机接口。</p>
 ]]></content>
       <tags>
         <tag>杂谈</tag>
@@ -223,7 +232,7 @@
   </entry>
   <entry>
     <title>Android</title>
-    <url>/2021/12/20/%E6%9C%9F%E6%9C%AB/</url>
+    <url>/2022/12/20/%E6%9C%9F%E6%9C%AB/</url>
     <content><![CDATA[<h1 id="移动终端编程技术"><a href="#移动终端编程技术" class="headerlink" title="移动终端编程技术"></a>移动终端编程技术</h1><h2 id="1、ListView基本作用，Adapter绑定数据集合的关键代码"><a href="#1、ListView基本作用，Adapter绑定数据集合的关键代码" class="headerlink" title="1、ListView基本作用，Adapter绑定数据集合的关键代码"></a>1、ListView基本作用，Adapter绑定数据集合的关键代码</h2><ul>
 <li>通过适配器将数据和显示控件绑定</li>
 <li>支持点击事件，可以用少量代码实现复杂的选择功能</li>
@@ -271,6 +280,15 @@
       </tags>
   </entry>
   <entry>
+    <title>聊聊Android和iOS</title>
+    <url>/2020/05/11/%E8%81%8A%E8%81%8AAndroid%E5%92%8CiOS/</url>
+    <content><![CDATA[<p>提到Android和iOS，人们的固有印象是，iOS流畅不卡顿，Android用久了就会卡顿，但是大多数人都不知道产生这种结果的原因是什么。<br>今天我就从这两大系统的底层来解释一下，在讲解之前，先介绍一下Unix和Linux，Linux属于类Unix系统，Unix和Linux都是用C语言编写的，C语言由于自身的简单，高效，灵活，使得Unix和Linux的运行效率高。回到正题，其中iOS是基于Unix开发的操作系统，Android是基于Linux开发的操作系统，但是Android虽然内核是基于Linux，但是Android真正运行在Java虚拟机上，了解或学习过Java的应该知道，Java是一个全平台的语言，因为它有自己的虚拟机，也就是因为这个虚拟机，导致它需要消耗大量内存，真就是成也虚拟机，败也虚拟机。这就导致iOS在底层就占据Android无法比拟的优势。</p>
+]]></content>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>物联网（二）</title>
     <url>/2021/04/10/%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
     <content><![CDATA[<h1 id="CoAP协议技术原理"><a href="#CoAP协议技术原理" class="headerlink" title="CoAP协议技术原理"></a>CoAP协议技术原理</h1><p>CoAP是受限制的应用协议（Constrained Application Protocol）的代名词。在当前由PC机组成的世界，信息交换是通过TCP和应用层协议HTTP实现的。但是对于小型设备而言，实现TCP和HTTP协议显然是一个过分的要求。为了让小设备可以接入互联网，CoAP协议被设计出来。CoAP是一种应用层协议，它运行于UDP协议之上而不是像运行TCP之上。CoAP协议非常小巧，最小的数据包仅为4字节。   <span id="more"></span></p>
@@ -304,28 +322,19 @@
       </tags>
   </entry>
   <entry>
-    <title>现实世界数字化，虚拟世界现实化</title>
-    <url>/2020/04/24/%E7%8E%B0%E5%AE%9E%E4%B8%96%E7%95%8C%E6%95%B0%E5%AD%97%E5%8C%96%EF%BC%8C%E8%99%9A%E6%8B%9F%E4%B8%96%E7%95%8C%E7%8E%B0%E5%AE%9E%E5%8C%96/</url>
-    <content><![CDATA[<p>  5G的到来，意味着高带宽，低时延，高速率的时代的来临。以5G为起点，未来的世界将会是虚实结合的世界。<span id="more"></span><br>依托5G技术，AR，MR，XR这些技术会迅速的发展起来，未来的世界会朝着现实世界数字化，虚拟世界现实化发展。未来，可以在数字世界中找到另外一个自己，它可以根据现实世界中自己的思维永久的生存在数字世界中，或许这就是人的另一种永生吧。在现实世界中，人们可以通过工具看到现实世界中不存在的另一个世界，这个世界会给生活带来不一样的体验。<br>但是5G仅仅是未来新的开始，新的起点而已，仅此而已。5G不足以改变这个世界，但是5G之后，未来已来。<br>现在文盲的标准是识不识字，在我看来，未来，文盲的标准是会不会编程，未来将会是全民编程的时代。<br>上文中提到的数字世界保存我们的思维进而永久存在于数字世界，这还牵扯到另外一个非常前沿的技术——脑机接口。</p>
-]]></content>
-      <tags>
-        <tag>杂谈</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>聊聊Android和iOS</title>
-    <url>/2020/05/11/%E8%81%8A%E8%81%8AAndroid%E5%92%8CiOS/</url>
-    <content><![CDATA[<p>提到Android和iOS，人们的固有印象是，iOS流畅不卡顿，Android用久了就会卡顿，但是大多数人都不知道产生这种结果的原因是什么。<br>今天我就从这两大系统的底层来解释一下，在讲解之前，先介绍一下Unix和Linux，Linux属于类Unix系统，Unix和Linux都是用C语言编写的，C语言由于自身的简单，高效，灵活，使得Unix和Linux的运行效率高。回到正题，其中iOS是基于Unix开发的操作系统，Android是基于Linux开发的操作系统，但是Android虽然内核是基于Linux，但是Android真正运行在Java虚拟机上，了解或学习过Java的应该知道，Java是一个全平台的语言，因为它有自己的虚拟机，也就是因为这个虚拟机，导致它需要消耗大量内存，真就是成也虚拟机，败也虚拟机。这就导致iOS在底层就占据Android无法比拟的优势。</p>
-]]></content>
-      <tags>
-        <tag>杂谈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自我学习路线</title>
     <url>/2020/04/10/%E8%87%AA%E6%88%91%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</url>
     <content><![CDATA[<p>Windows10–&gt;硬件–&gt;VS2019–&gt;C语言–&gt;b\s–&gt;Java–&gt;mySQL–&gt;Linux–&gt;Java web–&gt;GOF Java高级部分–&gt;框架–&gt;案例–&gt;算法和数据结构</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>谷歌退出中国十周年</title>
+    <url>/2020/03/23/%E8%B0%B7%E6%AD%8C%E9%80%80%E5%87%BA%E4%B8%AD%E5%9B%BD%E5%8D%81%E5%91%A8%E5%B9%B4/</url>
+    <content><![CDATA[<p>今天是2020年3月23日，一个很平常的日子，但是在十年前的今天，也就是2010年3月23日，Google宣布退出中国市场。<br>我并不知道谷歌为什么退出中国，但不可否认的是，Google搜索是目前最好的搜索引擎，没有之一。</p>
+]]></content>
+      <tags>
+        <tag>杂谈</tag>
+      </tags>
   </entry>
   <entry>
     <title>请你一定不要停下来，成为你想成为的人</title>
@@ -363,15 +372,6 @@
 <h1 id="不定时更新"><a href="#不定时更新" class="headerlink" title="不定时更新"></a>不定时更新</h1>]]></content>
       <tags>
         <tag>语录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>谷歌退出中国十周年</title>
-    <url>/2020/03/23/%E8%B0%B7%E6%AD%8C%E9%80%80%E5%87%BA%E4%B8%AD%E5%9B%BD%E5%8D%81%E5%91%A8%E5%B9%B4/</url>
-    <content><![CDATA[<p>今天是2020年3月23日，一个很平常的日子，但是在十年前的今天，也就是2010年3月23日，Google宣布退出中国市场。<br>我并不知道谷歌为什么退出中国，但不可否认的是，Google搜索是目前最好的搜索引擎，没有之一。</p>
-]]></content>
-      <tags>
-        <tag>杂谈</tag>
       </tags>
   </entry>
 </search>
