@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -164,7 +164,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -375,6 +375,137 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://zeng0813.github.io/2021/12/20/%E6%9C%9F%E6%9C%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zeng0813">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zeng0813">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | zeng0813">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/12/20/%E6%9C%9F%E6%9C%AB/" class="post-title-link" itemprop="url">Android</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-20 10:06:49" itemprop="dateCreated datePublished" datetime="2021-12-20T10:06:49+08:00">2021-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-12-21 09:23:11" itemprop="dateModified" datetime="2022-12-21T09:23:11+08:00">2022-12-21</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="移动终端编程技术"><a href="#移动终端编程技术" class="headerlink" title="移动终端编程技术"></a>移动终端编程技术</h1><h2 id="1、ListView基本作用，Adapter绑定数据集合的关键代码"><a href="#1、ListView基本作用，Adapter绑定数据集合的关键代码" class="headerlink" title="1、ListView基本作用，Adapter绑定数据集合的关键代码"></a>1、ListView基本作用，Adapter绑定数据集合的关键代码</h2><ul>
+<li>通过适配器将数据和显示控件绑定</li>
+<li>支持点击事件，可以用少量代码实现复杂的选择功能</li>
+<li>显示一个垂直滚动的数据集合</li>
+</ul>
+<p>关键代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">listview=findViewById(R.id.lv);</span><br><span class="line">MybaseAdapter mybaseAdapter=<span class="keyword">new</span> <span class="title class_">MybaseAdapter</span>();</span><br><span class="line">listView.setAdapter(MybaseAdapter);</span><br><span class="line"></span><br><span class="line">ArrayAdapter&lt;String&gt; arrayAdapter = <span class="keyword">new</span> <span class="title class_">ArrayAdapter</span>&lt;&gt;(<span class="built_in">this</span>,android.R.layaout.simple_list_item_1,listData);</span><br><span class="line">listView.setAdapter(arrayAdapter);</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、如何监听具有相对连续性值的控件值变化"><a href="#2、如何监听具有相对连续性值的控件值变化" class="headerlink" title="2、如何监听具有相对连续性值的控件值变化"></a>2、如何监听具有相对连续性值的控件值变化</h2><p>Button</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainActivity</span> <span class="keyword">extends</span> <span class="title class_">Activity</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Button btn1;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//绑定button按钮</span></span><br><span class="line">        btn1 = (Button) findViewById(R.id.button1);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//监听button事件</span></span><br><span class="line">        btn1.setOnClickListener(<span class="keyword">new</span> <span class="title class_">OnClickListener</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(View v)</span> &#123;</span><br><span class="line">                <span class="type">Toast</span> <span class="variable">tot</span> <span class="operator">=</span> Toast.makeText(</span><br><span class="line">                        MainActivity.<span class="built_in">this</span>,</span><br><span class="line">                        <span class="string">&quot;button点击事件&quot;</span>,</span><br><span class="line">                        Toast.LENGTH_LONG);</span><br><span class="line">                tot.show();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>SeekBar</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainActivity</span> <span class="keyword">extends</span> <span class="title class_">Activity</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> SeekBar seekBar;</span><br><span class="line">    <span class="keyword">private</span> TextView description;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.main);</span><br><span class="line">        seekBar=(SeekBar)findViewById(R.id.seekBar);</span><br><span class="line">        description=(TextView)findViewById(R.id.description);</span><br><span class="line">        seekBar.setOnSeekBarChangeListener(<span class="keyword">new</span> <span class="title class_">SeekBar</span>.OnSeekBarChangeListener() &#123;</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * 拖动条停止拖动的时候调用</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onStopTrackingTouch</span><span class="params">(SeekBar seekBar)</span> &#123;</span><br><span class="line">                description.setText(<span class="string">&quot;拖动停止&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * 拖动条开始拖动的时候调用</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onStartTrackingTouch</span><span class="params">(SeekBar seekBar)</span> &#123;</span><br><span class="line">                description.setText(<span class="string">&quot;开始拖动&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * 拖动条进度改变的时候调用</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onProgressChanged</span><span class="params">(SeekBar seekBar, <span class="type">int</span> progress,</span></span><br><span class="line"><span class="params">                    <span class="type">boolean</span> fromUser)</span> &#123;</span><br><span class="line">                description.setText(<span class="string">&quot;当前进度：&quot;</span>+progress+<span class="string">&quot;%&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>RatingBar</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> mRatingBar = (RatingBar)findViewById(R.id.service_grade_ratingBar);</span><br><span class="line">     mRatingBarLevel = (TextView)findViewById(R.id.service_grade_level);</span><br><span class="line"></span><br><span class="line">mRatingBar.setOnRatingBarChangeListener(<span class="keyword">new</span> <span class="title class_">RatingBar</span>.OnRatingBarChangeListener() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onRatingChanged</span><span class="params">(RatingBar ratingBar, <span class="type">float</span> rating, <span class="type">boolean</span> fromUser)</span> &#123;</span><br><span class="line">              <span class="type">float</span> <span class="variable">i</span> <span class="operator">=</span>  mRatingBar.getRating();</span><br><span class="line">                mRatingBarLevel.setText(i + <span class="string">&quot;&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">		ratingBar.setOnRatingBarChangeListener(<span class="keyword">new</span> <span class="title class_">RatingBar</span>.OnRatingBarChangeListener() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onRatingChanged</span><span class="params">(RatingBar ratingBar, <span class="type">float</span> rating, <span class="type">boolean</span> fromUser)</span> &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="3、Activity有没有什么生命周期？如有，画出生命周期流程图，并说明每个状态的内容"><a href="#3、Activity有没有什么生命周期？如有，画出生命周期流程图，并说明每个状态的内容" class="headerlink" title="3、Activity有没有什么生命周期？如有，画出生命周期流程图，并说明每个状态的内容"></a>3、Activity有没有什么生命周期？如有，画出生命周期流程图，并说明每个状态的内容</h2><ul>
+<li>生命周期就是一个对象从创建到销毁的过程，每一个对象都有自己的生命周期。同样，Activity也具有相应的生命周期，Activity的生命周期中分为三种状态，分别是运行状态、暂停状态和停止状态。</li>
+<li>当Activity在屏幕的最前端时，它是可见的、有焦点的。可以用来处理用户的常见操作，如点击、双击、长按事件等，这种状态称为运行状态。</li>
+<li>在某些情况下，Activity对用户来说仍然是可见的，但它不再拥有焦点，即用户对它的操作是没有实际意义的。例如，当最上面的Activity没有完全覆盖屏幕或者是透明的，被覆盖的Activity仍然对用户可见，并且存活(它保留着所有的状态和成员信息并保持与Activity管理器的连接)。但当内存不足时，这个暂停状态的Activity可能会被杀死。</li>
+<li>当Activity完全不可见时，它就处于停止状态，但仍然保留着当前状态和成员信息。然而这些对用户来说都是不可见的，如果当系统内存不足时，这个Activity很容易被杀死。<br>onCreate()<br>onStart()<br>onResume()<br>onPause()<br>onStop()<br>onRestart()<br>onDestroy()<br><img src="/Activity.png" alt="Activity流程图"></li>
+</ul>
+<h2 id="4、SQL-Server-Oracle-HBase-SQLlite-MySQL数据库的特点和区别，说明举例它们的数据查询（或创表）语句"><a href="#4、SQL-Server-Oracle-HBase-SQLlite-MySQL数据库的特点和区别，说明举例它们的数据查询（或创表）语句" class="headerlink" title="4、SQL Server\Oracle\HBase\SQLlite\MySQL数据库的特点和区别，说明举例它们的数据查询（或创表）语句"></a>4、SQL Server\Oracle\HBase\SQLlite\MySQL数据库的特点和区别，说明举例它们的数据查询（或创表）语句</h2><h3 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h3><p>甲骨文开发的商业数据库，不开源，支持所有主流平台，性能好，功能强，稳定性好，安全性好，支持大数据量，比较复杂，收费昂贵。</p>
+<h3 id="SQL-Server"><a href="#SQL-Server" class="headerlink" title="SQL Server"></a>SQL Server</h3><p>微软开发的商业数据库，只能在 Windows 运行。高性能,系统管理先进，支持Windows图形化管理工具，支持本地和远程的系统管理和配置。强壮的事务处理功能，采用各种方法保证数据的完整性。</p>
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><p>甲骨文拥有的开源数据库，支持多种操作系统，体积小，功能弱些，简单的操作性能好，复杂的操作性能差些。</p>
+<h3 id="SQLite"><a href="#SQLite" class="headerlink" title="SQLite"></a>SQLite</h3><p>开源、轻型、无服务器、零配置，一个数据库就只是一个文件，在应用程序内执行操作，占用资源小，可用于嵌入式或小型应用。</p>
+<h3 id="HBase-宽表、列式存储、键值对存储、NoSQL、OLTP"><a href="#HBase-宽表、列式存储、键值对存储、NoSQL、OLTP" class="headerlink" title="HBase(宽表、列式存储、键值对存储、NoSQL、OLTP)"></a>HBase(宽表、列式存储、键值对存储、NoSQL、OLTP)</h3><ul>
+<li>基于 Hadoop 的 HDFS 分布式文件系统</li>
+<li>分布式数据库，需要 ZooKeeper 作为节点间的协调器</li>
+<li>支持宽表，支持非结构化数据，不需要预定义列和数据类型</li>
+<li>列式存储，每个 HFile 文件只存储一个列族的数据，一个列族可以有多个 HFile，而 HFile 内部按 Key-Value 格式存储，其中 Key 是 rowkey, column family, column, timestamp 的组合并且按 rowkey 在 HFile 中按序存储，而 value 就是 Column Cell 的值</li>
+<li>支持海量数据 (千亿级数据表)</li>
+<li>数据先写入内存，达到阀值再写入磁盘，性能好，占用内存大</li>
+<li>不支持 SQL，不支持 Join，有自己专用的语句，支持增删改查</li>
+<li>自动分区、负载均衡、可线性扩展</li>
+<li>自动故障迁移</li>
+<li>强一致性 (每个分区 Region 只由一个 Region Server 负责，容易实现强一致性)</li>
+<li>CP 模型 (不保证可用性，每个 Region 只由一个 Region Server 负责，Server 挂了得做迁移导致暂时不可用)</li>
+<li>不支持事务、二级索引</li>
+</ul>
+<h3 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create </span><br><span class="line"></span><br><span class="line">select &lt;列名1&gt;,&lt;列名2&gt;,</span><br><span class="line">from &lt;表名&gt;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Activity组件"><a href="#Activity组件" class="headerlink" title="Activity组件"></a>Activity组件</h2><h2 id="所有布局，特点，标签"><a href="#所有布局，特点，标签" class="headerlink" title="所有布局，特点，标签"></a>所有布局，特点，标签</h2><h2 id="Android单击事件"><a href="#Android单击事件" class="headerlink" title="Android单击事件"></a>Android单击事件</h2><h2 id="intent实现消息传递"><a href="#intent实现消息传递" class="headerlink" title="intent实现消息传递"></a>intent实现消息传递</h2><h2 id="实现页面跳转"><a href="#实现页面跳转" class="headerlink" title="实现页面跳转"></a>实现页面跳转</h2><h2 id="消息提示框"><a href="#消息提示框" class="headerlink" title="消息提示框"></a>消息提示框</h2><p>Toast.makeText(This.)</p>
+
       
     </div>
 
@@ -1061,105 +1192,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://zeng0813.github.io/2020/04/27/WSL%E5%AE%89%E8%A3%85/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zeng0813">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zeng0813">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | zeng0813">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/04/27/WSL%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">WSL安装</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-04-27 19:00:00" itemprop="dateCreated datePublished" datetime="2020-04-27T19:00:00+08:00">2020-04-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-09-14 16:47:05" itemprop="dateModified" datetime="2022-09-14T16:47:05+08:00">2022-09-14</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>WSL全称Windows Subsystem for Linux，适用于Linux的Windows子系统，被称为Linux最好的发行版。</p>
-<h1 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h1><p>必须运行 Windows 10 版本 2004 及更高版本（内部版本 19041 及更高版本）或 Windows 11。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/27/WSL%E5%AE%89%E8%A3%85/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -1185,14 +1217,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">20k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">15 分钟</span>
+    <span title="站点阅读时长">19 分钟</span>
   </span>
 </div>
 
