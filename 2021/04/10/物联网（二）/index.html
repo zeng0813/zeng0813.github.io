@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-bounce.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zeng0813.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="CoAP协议技术原理CoAP是受限制的应用协议（Constrained Application Protocol）的代名词。在当前由PC机组成的世界，信息交换是通过TCP和应用层协议HTTP实现的。但是对于小型设备而言，实现TCP和HTTP协议显然是一个过分的要求。为了让小设备可以接入互联网，CoAP协议被设计出来。CoAP是一种应用层协议，它运行于UDP协议之上而不是像运行TCP之上。CoAP协">
+<meta property="og:type" content="article">
+<meta property="og:title" content="物联网（二）">
+<meta property="og:url" content="https://zeng0813.github.io/2021/04/10/%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
+<meta property="og:site_name" content="山夆">
+<meta property="og:description" content="CoAP协议技术原理CoAP是受限制的应用协议（Constrained Application Protocol）的代名词。在当前由PC机组成的世界，信息交换是通过TCP和应用层协议HTTP实现的。但是对于小型设备而言，实现TCP和HTTP协议显然是一个过分的要求。为了让小设备可以接入互联网，CoAP协议被设计出来。CoAP是一种应用层协议，它运行于UDP协议之上而不是像运行TCP之上。CoAP协">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-04-10T06:15:43.000Z">
+<meta property="article:modified_time" content="2024-10-18T07:10:49.732Z">
+<meta property="article:author" content="山夆">
+<meta property="article:tag" content="物联网">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://zeng0813.github.io/2021/04/10/%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zeng0813.github.io/2021/04/10/%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89/","path":"2021/04/10/物联网（二）/","title":"物联网（二）"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>物联网（二） | 山夆</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">山夆</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CoAP%E5%8D%8F%E8%AE%AE%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">CoAP协议技术原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CoAP%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">CoAP协议的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CoAP%E5%8D%8F%E8%AE%AE%E7%89%B9%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">CoAP协议特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RESTful%E6%9E%B6%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">RESTful架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CoAP%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84%E7%AE%80%E4%BB%8B"><span class="nav-number">1.4.</span> <span class="nav-text">CoAP报文结构简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CoAP%E7%9A%84Request%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.</span> <span class="nav-text">CoAP的Request方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CoAP%E7%9A%84%E5%93%8D%E5%BA%94%E7%A0%81-4-XX"><span class="nav-number">1.6.</span> <span class="nav-text">CoAP的响应码-4.XX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CoAP-Messages%E6%89%BF%E8%BD%BD%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="nav-number">1.7.</span> <span class="nav-text">CoAP Messages承载的信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proxy-%E4%BB%A3%E7%90%86"><span class="nav-number">1.8.</span> <span class="nav-text">Proxy-代理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MQTT%E5%8D%8F%E8%AE%AE%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">MQTT协议技术原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MQTT%E6%A6%82%E8%BF%B0"><span class="nav-number">2.1.</span> <span class="nav-text">MQTT概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MQTT%E5%8D%8F%E8%AE%AE%E7%89%B9%E7%82%B9"><span class="nav-number">2.2.</span> <span class="nav-text">MQTT协议特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MQTT%E7%9A%84%E5%8F%91%E5%B8%83-%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">MQTT的发布&#x2F;订阅模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MQTT%E5%8F%91%E5%B8%83%E4%B8%8E%E8%AE%A2%E9%98%85"><span class="nav-number">2.4.</span> <span class="nav-text">MQTT发布与订阅</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83"><span class="nav-number">2.4.1.</span> <span class="nav-text">发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A2%E9%98%85"><span class="nav-number">2.4.2.</span> <span class="nav-text">订阅</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MQTT%E4%B8%BB%E9%A2%98%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="nav-number">2.5.</span> <span class="nav-text">MQTT主题通配符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E7%BA%A7%EF%BC%9A"><span class="nav-number">2.5.1.</span> <span class="nav-text">单级：+</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%A7%EF%BC%9A"><span class="nav-number">2.5.2.</span> <span class="nav-text">多级：#</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.</span> <span class="nav-text">物联网操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RTOS%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.1.</span> <span class="nav-text">RTOS介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RTOS%E6%A6%82%E5%BF%B5"><span class="nav-number">3.1.1.</span> <span class="nav-text">RTOS概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8RTOS%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-number">3.1.2.</span> <span class="nav-text">使用RTOS的好处</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LiteOS%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.2.</span> <span class="nav-text">LiteOS介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Huawei-LiteOS%E6%A6%82%E8%BF%B0"><span class="nav-number">3.2.1.</span> <span class="nav-text">Huawei LiteOS概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9C%80%E6%B1%82"><span class="nav-number">3.2.2.</span> <span class="nav-text">物联网操作系统需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IOT%E7%BB%88%E7%AB%AF%E5%9C%A8%E4%B8%8D%E5%90%8C%E9%A2%86%E5%9F%9F%E4%B8%AD%E9%9C%80%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.2.3.</span> <span class="nav-text">IOT终端在不同领域中需解决的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E4%B8%B4%E7%9A%84%E6%8C%91%E6%88%98"><span class="nav-number">3.2.4.</span> <span class="nav-text">物联网操作系统面临的挑战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E3%80%81%E5%8D%8F%E8%AE%AE%E3%80%81%E6%A0%87%E5%87%86%E5%92%8C%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E9%AB%98%E5%BA%A6%E7%A2%8E%E7%89%87%E5%8C%96"><span class="nav-number">3.2.5.</span> <span class="nav-text">硬件、协议、标准和应用场景高度碎片化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E5%8F%97%E9%99%90%E3%80%81%E8%B6%85%E4%BD%8E%E5%8A%9F%E8%80%97%E5%92%8C%E9%AB%98%E5%AE%9E%E6%97%B6%E5%93%8D%E5%BA%94%E8%A6%81%E6%B1%82%E6%9E%81%E8%87%B4%E5%8C%96"><span class="nav-number">3.2.6.</span> <span class="nav-text">资源受限、超低功耗和高实时响应要求极致化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E6%98%93%E8%A7%84%E6%A8%A1%E9%83%A8%E7%BD%B2%E5%92%8C%E5%AE%89%E5%85%A8%E8%BF%9E%E6%8E%A5"><span class="nav-number">3.2.7.</span> <span class="nav-text">简易规模部署和安全连接</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E5%B9%B3%E5%8F%B0"><span class="nav-number">4.</span> <span class="nav-text">物联网平台</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.1.</span> <span class="nav-text">物模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E6%9C%BA%E5%88%B6"><span class="nav-number">5.</span> <span class="nav-text">中断机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E6%9C%BA%E5%88%B6%E7%AE%80%E4%BB%8B"><span class="nav-number">5.1.</span> <span class="nav-text">中断机制简介</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">山夆</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zeng0813" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zeng0813" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zengpanfeng@outlook.com" title="E-Mail → mailto:zengpanfeng@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zeng0813.github.io/2021/04/10/%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="山夆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山夆">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="物联网（二） | 山夆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          物联网（二）
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-04-10 14:15:43" itemprop="dateCreated datePublished" datetime="2021-04-10T14:15:43+08:00">2021-04-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-10-18 15:10:49" itemprop="dateModified" datetime="2024-10-18T15:10:49+08:00">2024-10-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="CoAP协议技术原理"><a href="#CoAP协议技术原理" class="headerlink" title="CoAP协议技术原理"></a>CoAP协议技术原理</h1><p>CoAP是受限制的应用协议（Constrained Application Protocol）的代名词。在当前由PC机组成的世界，信息交换是通过TCP和应用层协议HTTP实现的。但是对于小型设备而言，实现TCP和HTTP协议显然是一个过分的要求。为了让小设备可以接入互联网，CoAP协议被设计出来。CoAP是一种应用层协议，它运行于UDP协议之上而不是像运行TCP之上。CoAP协议非常小巧，最小的数据包仅为4字节。   <span id="more"></span></p>
+<h2 id="CoAP协议的定义"><a href="#CoAP协议的定义" class="headerlink" title="CoAP协议的定义"></a>CoAP协议的定义</h2><p>CoAP协议的交互模型与HTTP的客户端&#x2F;服务端模型类似。然而，在M2M的交互场景中，CoAP目标是设计一个通用的网络协议，满足受限环境的特殊需求，特别考虑了能源、楼宇自动化和其它M2M应用。<br>CoAP并不能替代HTTP协议，但是对于那些小设备（256KB Flash 32KB RAM 20MHz主频）而言CoAP的确是一个更好的解决方案。</p>
+<h2 id="CoAP协议特点"><a href="#CoAP协议特点" class="headerlink" title="CoAP协议特点"></a>CoAP协议特点</h2><p>1）满足受限环境下M2M需求的协议<br>2）CoAp协议基于UDP<br>3）异步消息交换<br>4）轻量级的头部，且解析复杂度低<br>5）支持URI和Content-Type<br>6）能实现简单的数据缓存和代理<br>7）无状态的HTTP映射，可以构建代理服务器，使CoAP资源可以用HTTP协议访问，也可以使HTTP接口实现于CoAP协议之上<br>8）支持DTLS</p>
+<h2 id="RESTful架构"><a href="#RESTful架构" class="headerlink" title="RESTful架构"></a>RESTful架构</h2><p>REST（Representational State Transfer）是一种设计风格而不是标准，如果一个架构符合REST原则，我们就称它为RESTful架构，REST可以直译为表现层状态转化，表现层其实指的是资源的表现层。通俗来讲就是：资源在网络中某种表现形式进行状态转移。分解开来看：<br>1）Resource：资源，即数据<br>2）Representational：某种表现形式，比如用JSON，XML等<br>3）State Transfer：状态变化。通过动词（如POST，GET，PUT，DELETE）实现</p>
+<h2 id="CoAP报文结构简介"><a href="#CoAP报文结构简介" class="headerlink" title="CoAP报文结构简介"></a>CoAP报文结构简介</h2><p>1）和其他TCP IP协议簇中的协议一样，CoAP协议总是以“头”的形式出现在负载之前，而负载和CoAP头之间使用单字节0xFF分离<br>2）CoAP协议报文第一行是消息头，必须有，固定4个byte，其它字段为可选<br>3）Wireshark抓包</p>
+<h2 id="CoAP的Request方法"><a href="#CoAP的Request方法" class="headerlink" title="CoAP的Request方法"></a>CoAP的Request方法</h2><p>CoAP协议定义的Request方法有如下4种：<br>1）【0.01】GET方法——用于获取某资源<br>2）【0.02】POST方法——用于创建某资源<br>3）【0.03】PUT方法——用于更新某资源<br>4）【0.04】DELETE方法——用于删除某资源<br>对于不能识别的方法，需要返回一个4.05（method Not Allowed）的Piggybacked response</p>
+<h2 id="CoAP的响应码-4-XX"><a href="#CoAP的响应码-4-XX" class="headerlink" title="CoAP的响应码-4.XX"></a>CoAP的响应码-4.XX</h2><p>【4.00】Bad Request 请求错误，服务器无法处理。类似于HTTP 400<br>【4.01】Unauthorized 没有范围权限。类似于HTTP 401<br>【4.02】Bad Option 请求中包含错误选项<br>【4.03】Forbidden 服务器拒绝请求。类似于HTTP 403<br>【4.04】Not Found 服务器找不到资源。类似于HTTP 404<br>【4.05】Method Not Allowed 非法请求方法。类似于HTTP 405<br>【4.06】Not Acceptable请求选项和服务器生成内容选项不一致。类似于HTTP 406<br>【4.12】Precondition Failed请求参数不足。类似于HTTP 412<br>【4.15】Unsuppor Conten-Type 请求中的媒体类型不被支持。类似于HTTP 415</p>
+<h2 id="CoAP-Messages承载的信息"><a href="#CoAP-Messages承载的信息" class="headerlink" title="CoAP Messages承载的信息"></a>CoAP Messages承载的信息</h2><p>CoAP Messages承载信息包括：<br>1）Request<br>2）Response<br>3）Empty Message</p>
+<h2 id="Proxy-代理"><a href="#Proxy-代理" class="headerlink" title="Proxy-代理"></a>Proxy-代理</h2><p>Proxy是一种在CoAP Clients驱动下代表它们执行Request的Endpoint<br>Proxy按照功能分类：<br>前向代理（Forward-proxy）<br>反向代理（Reverse-proxy）</p>
+<h1 id="MQTT协议技术原理"><a href="#MQTT协议技术原理" class="headerlink" title="MQTT协议技术原理"></a>MQTT协议技术原理</h1><p>MQTT是一个基于客户端发布&#x2F;订阅模式的消息传输协议。它轻量、开放、简洁、优雅以便于可以被快速实现。</p>
+<h2 id="MQTT概述"><a href="#MQTT概述" class="headerlink" title="MQTT概述"></a>MQTT概述</h2><p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输协议）。它构建于TCP&#x2F;IP协议上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布&#x2F;订阅型“轻量级”通讯协议</p>
+<h2 id="MQTT协议特点"><a href="#MQTT协议特点" class="headerlink" title="MQTT协议特点"></a>MQTT协议特点</h2><p>1）使用发布&#x2F;订阅消息模式，提供了一对多的消息分发和应用之间的解耦<br>2）消息传输不需要知道负载内容<br>3）提供三种等级的服务质量<br>4）很小的传输消耗和协议数据交换，很大限度减少网络流量<br>5)异常连接断开发生时，能通知到相关各方</p>
+<h2 id="MQTT的发布-订阅模式"><a href="#MQTT的发布-订阅模式" class="headerlink" title="MQTT的发布&#x2F;订阅模式"></a>MQTT的发布&#x2F;订阅模式</h2><p>1）客户端连接到代理。它可以订阅代理中的任何消息“主题”<br>2）客户端通过将消息和主题发送给代理，发布某个主题范围内的消息<br>3）代理然后将消息转发给所有订阅该主题的客户端<br>4）发布&#x2F;订阅解耦了消息的发布者和接受者</p>
+<h2 id="MQTT发布与订阅"><a href="#MQTT发布与订阅" class="headerlink" title="MQTT发布与订阅"></a>MQTT发布与订阅</h2><h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>当MQTT客户端和代理（broker）建立连接后，就可以发布消息了<br>每个消息必须包含一个主题，代理（broker）根据主题将消息转发给感兴趣的客户端。每个消息通常拥有payload，其中包含了以字节格式传输的实际数据</p>
+<h3 id="订阅"><a href="#订阅" class="headerlink" title="订阅"></a>订阅</h3><p>订阅包含一个主题过滤器（Topic Filter）和一个最大的服务质量（QoS）等级<br>订阅与单个会话（Session）关联。会话可以包含多于一个的订阅。会话的每个订阅都有一个不同的主题过滤器</p>
+<h2 id="MQTT主题通配符"><a href="#MQTT主题通配符" class="headerlink" title="MQTT主题通配符"></a>MQTT主题通配符</h2><h3 id="单级："><a href="#单级：" class="headerlink" title="单级：+"></a>单级：+</h3><p>只能用于单个主题层级匹配的通配符</p>
+<h3 id="多级："><a href="#多级：" class="headerlink" title="多级：#"></a>多级：#</h3><p>用于匹配主题中任意层级的通配符</p>
+<h1 id="物联网操作系统"><a href="#物联网操作系统" class="headerlink" title="物联网操作系统"></a>物联网操作系统</h1><h2 id="RTOS介绍"><a href="#RTOS介绍" class="headerlink" title="RTOS介绍"></a>RTOS介绍</h2><h3 id="RTOS概念"><a href="#RTOS概念" class="headerlink" title="RTOS概念"></a>RTOS概念</h3><p>RTOS（Real-time operating system，实时操作系统）。<br>实时操作系统根据任务执行的实时性，分为“硬实时”操作系统和“软实时”操作系统。<br>“硬实时”操作系统必须使任务在确定的时间内完成。<br>“软实时”操作系统能让绝大多数任务在确定时间内完成。</p>
+<h3 id="使用RTOS的好处"><a href="#使用RTOS的好处" class="headerlink" title="使用RTOS的好处"></a>使用RTOS的好处</h3><p>Huawei LiteOS是一款“软实时”操作系统。<br>降低开发难度，直接使用系统API，即可完成系统资源的申请、多任务的配合，以及任务间的通信等。<br>增加代码可读性，易于维护和管理。<br>提升可移植性，对接不同芯片的工作由操作系统完成，应用开发者只需关注OS层接口。</p>
+<h2 id="LiteOS介绍"><a href="#LiteOS介绍" class="headerlink" title="LiteOS介绍"></a>LiteOS介绍</h2><h3 id="Huawei-LiteOS概述"><a href="#Huawei-LiteOS概述" class="headerlink" title="Huawei LiteOS概述"></a>Huawei LiteOS概述</h3><p>Huawei LiteOS基础内核是最精简的Huawei LiteOS操作系统代码，包括任务管理、内存管理、时间管理、通信管理、中断管理、队列管理、事件管理、定时器等操作系统基础组件，可以单独运行。<br>Huawei LiteOS Kernel的优势<br>1）高实时性，高稳定性。<br>2）超小内核，基础内核体积可以裁剪至不到10KB。<br>3）低功耗。<br>4）支持功能静态裁切。</p>
+<h3 id="物联网操作系统需求"><a href="#物联网操作系统需求" class="headerlink" title="物联网操作系统需求"></a>物联网操作系统需求</h3><p>连接需求：不同类型通信协议的互联互通<br>组网需求：自发现、自连接、自组网，网络可快速自愈<br>管理需求：不同类型传感器接入和算法开发的统一管理。</p>
+<h3 id="IOT终端在不同领域中需解决的问题"><a href="#IOT终端在不同领域中需解决的问题" class="headerlink" title="IOT终端在不同领域中需解决的问题"></a>IOT终端在不同领域中需解决的问题</h3><p>1）Connectivity：部署分散，无线覆盖不够<br>2）互通、互操作：不同厂家的设备<br>3）能耗：使用电池，能耗要严格控制<br>4）安全：无安全网络<br>5）建议配置：没有输入和显示设备<br>6）远程操控：NAT和防火墙后的设备</p>
+<h3 id="物联网操作系统面临的挑战"><a href="#物联网操作系统面临的挑战" class="headerlink" title="物联网操作系统面临的挑战"></a>物联网操作系统面临的挑战</h3><p>多传感器协同管理复杂<br>视频场景下性能、功耗要求高<br>终端之间通信协议复杂多样<br>开发语言编程效率低、上手难度大</p>
+<h3 id="硬件、协议、标准和应用场景高度碎片化"><a href="#硬件、协议、标准和应用场景高度碎片化" class="headerlink" title="硬件、协议、标准和应用场景高度碎片化"></a>硬件、协议、标准和应用场景高度碎片化</h3><h3 id="资源受限、超低功耗和高实时响应要求极致化"><a href="#资源受限、超低功耗和高实时响应要求极致化" class="headerlink" title="资源受限、超低功耗和高实时响应要求极致化"></a>资源受限、超低功耗和高实时响应要求极致化</h3><h3 id="简易规模部署和安全连接"><a href="#简易规模部署和安全连接" class="headerlink" title="简易规模部署和安全连接"></a>简易规模部署和安全连接</h3><h1 id="物联网平台"><a href="#物联网平台" class="headerlink" title="物联网平台"></a>物联网平台</h1><h2 id="物模型"><a href="#物模型" class="headerlink" title="物模型"></a>物模型</h2><p>物模型又称产品模型，用于描述设备具备的能力和特性。开发者通过定义profile，在物联网平台构建一款设备的抽象模型，使平台理解该款设备支持的服务、属性、命令等信息，如颜色、开关等。</p>
+<h1 id="中断机制"><a href="#中断机制" class="headerlink" title="中断机制"></a>中断机制</h1><h2 id="中断机制简介"><a href="#中断机制简介" class="headerlink" title="中断机制简介"></a>中断机制简介</h2><p>中断指出现需求时，CPU暂停执行当前程序，转而执行新程序的过程。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" rel="tag"><i class="fa fa-tag"></i> 物联网</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/20/%E5%88%9D%E8%AF%86%E7%89%A9%E8%81%94%E7%BD%91/" rel="prev" title="初识物联网">
+                  <i class="fa fa-angle-left"></i> 初识物联网
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/05/12/AIoT/" rel="next" title="AIoT">
+                  AIoT <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">山夆</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/zeng0813" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zeng0813","repo":"gitalk","client_id":"7af250df3a6bf3baa2ba","client_secret":"6aa8b354b102601334d064668bc0133868a7638a","admin_user":"zeng0813","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"4191af2650c56d736a0d70162f5879c3"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

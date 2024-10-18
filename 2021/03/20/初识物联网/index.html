@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha256-5eIC48iZUHmSlSUz9XtjRyK2mzQkHScZY1WdMaoz74E=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-bounce.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zeng0813.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.21.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="物联网初探物联网（Internet of Things）早期概念定义指依托RFID（射频识别）技术和设备，按预定的通信协议与互联网结合，使物品信息实现智能化识别和管理，实现物品信息互联、可交换和共享而形成的网络。 物联网发展历程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识物联网">
+<meta property="og:url" content="https://zeng0813.github.io/2021/03/20/%E5%88%9D%E8%AF%86%E7%89%A9%E8%81%94%E7%BD%91/index.html">
+<meta property="og:site_name" content="山夆">
+<meta property="og:description" content="物联网初探物联网（Internet of Things）早期概念定义指依托RFID（射频识别）技术和设备，按预定的通信协议与互联网结合，使物品信息实现智能化识别和管理，实现物品信息互联、可交换和共享而形成的网络。 物联网发展历程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-20T02:06:49.000Z">
+<meta property="article:modified_time" content="2024-10-18T07:10:49.721Z">
+<meta property="article:author" content="山夆">
+<meta property="article:tag" content="物联网">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://zeng0813.github.io/2021/03/20/%E5%88%9D%E8%AF%86%E7%89%A9%E8%81%94%E7%BD%91/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zeng0813.github.io/2021/03/20/%E5%88%9D%E8%AF%86%E7%89%A9%E8%81%94%E7%BD%91/","path":"2021/03/20/初识物联网/","title":"初识物联网"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>初识物联网 | 山夆</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">山夆</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E5%88%9D%E6%8E%A2"><span class="nav-number">1.</span> <span class="nav-text">物联网初探</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88Internet-of-Things%EF%BC%89%E6%97%A9%E6%9C%9F%E6%A6%82%E5%BF%B5%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">物联网（Internet of Things）早期概念定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">物联网发展历程       </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E6%97%B6%E6%9C%9F%E5%88%92%E5%88%86"><span class="nav-number">1.3.</span> <span class="nav-text">发展历史时期划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E5%B1%82%E6%AC%A1%E5%88%92%E5%88%86"><span class="nav-number">1.4.</span> <span class="nav-text">物联网层次划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E5%9E%82%E7%9B%B4%E8%A1%8C%E4%B8%9A%E5%BA%94%E7%94%A8%E5%88%92%E5%88%86"><span class="nav-number">1.5.</span> <span class="nav-text">物联网垂直行业应用划分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E5%8F%AF%E9%9D%A0%E7%9A%84%E6%9C%89%E7%BA%BF%E9%80%9A%E4%BF%A1"><span class="nav-number">2.</span> <span class="nav-text">稳定可靠的有线通信</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%99%BE%E5%AE%B6%E4%BA%89%E9%B8%A3%E7%9A%84%E6%97%A0%E7%BA%BF%E9%80%9A%E4%BF%A1"><span class="nav-number">3.</span> <span class="nav-text">百家争鸣的无线通信</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%87%E7%89%A9%E4%BA%92%E8%81%94%E7%9A%84LPWA"><span class="nav-number">4.</span> <span class="nav-text">万物互联的LPWA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E5%85%B3%EF%BC%8C%E6%B1%87%E8%81%9A%E5%9B%9E%E4%BC%A0"><span class="nav-number">5.</span> <span class="nav-text">物联网关，汇聚回传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E5%85%A8%E5%8F%AF%E9%9D%A0%E7%9A%84%E5%B7%A5%E4%B8%9A%E7%89%A9%E8%81%94%E7%BD%91%E5%85%B3"><span class="nav-number">5.1.</span> <span class="nav-text">安全可靠的工业物联网关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%93%E6%9C%89%E6%88%90%E6%95%88%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E5%85%B3%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">5.2.</span> <span class="nav-text">卓有成效的物联网关解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E4%BA%92%E8%81%94%E7%9A%84%E5%AE%B6%E5%BA%AD%E6%99%BA%E8%83%BD%E7%BD%91%E5%85%B3"><span class="nav-number">5.3.</span> <span class="nav-text">智能互联的家庭智能网关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E5%8E%BB%EF%BC%9A%E7%82%B9%E7%8A%B6%E7%BD%91%E7%BB%9C"><span class="nav-number">5.3.1.</span> <span class="nav-text">过去：点状网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%B0%E5%9C%A8%EF%BC%9A%E6%98%9F%E5%9E%8B%E7%BD%91%E7%BB%9C"><span class="nav-number">5.3.2.</span> <span class="nav-text">现在：星型网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AA%E6%9D%A5%EF%BC%9A%E7%BD%91%E7%8A%B6%E7%BB%93%E6%9E%84"><span class="nav-number">5.3.3.</span> <span class="nav-text">未来：网状结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%B6%E5%BA%AD%E7%BD%91%E7%BB%9C%EF%BC%9A"><span class="nav-number">5.3.4.</span> <span class="nav-text">家庭网络：</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">山夆</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zeng0813" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zeng0813" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zengpanfeng@outlook.com" title="E-Mail → mailto:zengpanfeng@outlook.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zeng0813.github.io/2021/03/20/%E5%88%9D%E8%AF%86%E7%89%A9%E8%81%94%E7%BD%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="山夆">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山夆">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="初识物联网 | 山夆">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          初识物联网
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-03-20 10:06:49" itemprop="dateCreated datePublished" datetime="2021-03-20T10:06:49+08:00">2021-03-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-10-18 15:10:49" itemprop="dateModified" datetime="2024-10-18T15:10:49+08:00">2024-10-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="物联网初探"><a href="#物联网初探" class="headerlink" title="物联网初探"></a>物联网初探</h1><h2 id="物联网（Internet-of-Things）早期概念定义"><a href="#物联网（Internet-of-Things）早期概念定义" class="headerlink" title="物联网（Internet of Things）早期概念定义"></a>物联网（Internet of Things）早期概念定义</h2><p>指依托RFID（射频识别）技术和设备，按预定的通信协议与互联网结合，使物品信息实现智能化识别和管理，实现物品信息互联、可交换和共享而形成的网络。</p>
+<h2 id="物联网发展历程"><a href="#物联网发展历程" class="headerlink" title="物联网发展历程       "></a>物联网发展历程       <span id="more"></span></h2><p>2005 国际电信联盟引用物联网概念<br>2008 IBM提出“智慧地球”<br>2009 “感知中国”<br>2013 德国“工业4.0”<br>2015 “中国制造2025”发布</p>
+<h2 id="发展历史时期划分"><a href="#发展历史时期划分" class="headerlink" title="发展历史时期划分"></a>发展历史时期划分</h2><p>1999-2013 概念期<br>2014-2016 发展期<br>2016-至今 成熟期</p>
+<h2 id="物联网层次划分"><a href="#物联网层次划分" class="headerlink" title="物联网层次划分"></a>物联网层次划分</h2><p>从云—管—端的逻辑体系来划分，物联网的层次可以可简单划分为四个层次<br>应用层：负责数据呈现及客户交互<br>平台层：负责设备通信管理、数据存储、业务规划等<br>网络层：负责终端接入和数据传输<br>感知层：负责信息收集和信号处理</p>
+<h2 id="物联网垂直行业应用划分"><a href="#物联网垂直行业应用划分" class="headerlink" title="物联网垂直行业应用划分"></a>物联网垂直行业应用划分</h2><p>公共事业物联网<br>工业物联网<br>车联网<br>智慧家庭物联网</p>
+<h1 id="稳定可靠的有线通信"><a href="#稳定可靠的有线通信" class="headerlink" title="稳定可靠的有线通信"></a>稳定可靠的有线通信</h1><p>以太网：现有局域网采用的最通用的通信协议标准，包括标准以太网、快速以太网、10G以太网；<br>RS-232：EIA制定的异步传输标准接口；<br>RS-485：解决232不能实现联网功能发展起来的；<br>M-Bus：用于非电力户用仪表传输的欧洲总线标准，基于OSI参考模型；<br>PLC：电力线通信；<br>有线通信技术具有稳定性强、可靠性高的优点，缺点是受限于传输媒介。</p>
+<h1 id="百家争鸣的无线通信"><a href="#百家争鸣的无线通信" class="headerlink" title="百家争鸣的无线通信"></a>百家争鸣的无线通信</h1><p>主要分为两类：<br>蜂窝移动通信——2G、3G、4G通信技术（GPRS）<br>短距无线通信技术——蓝牙（Bluetooth）、Wi-Fi、ZigBee、Z-Wave<br>蓝牙：2.4-2.485GHz的ISM波段的无线电波、最高数据传输速率1Mbps、最大传输距离为10cm-10m的数据传输（通过增加发射传输功率传输距离可达到100m)。其优点是速率快、低功耗、安全性高，缺点是网络节点少，不适合多点布控。<br>Wi-Fi：Wi-Fi是一种允许电子设备连接到一个无线局域网（WLAN）的技术，通常使用2.4G UHF或5G SHF ISM射频频段。其优点是范围覆盖广，数据传输效率快，缺点是传输安全性不好，稳定性差，功耗略高。<br>ZigBee：ZigBee是基于IEEE802.15.4标准的低功耗局域网协议，广泛应用于工业，智慧家庭等中。其优点是近距离、低复杂度、自组织、低功耗、低数据速率，缺点是物体阻挡后信号会衰减、不同芯片兼容性较差、网络较灵活、不易维护。<br>Z-Wave：Z-Wave是一种新兴的基于射频的、低成本、低功耗、高可靠的短距离无线通信技术。其优点是网络结构简单、低功耗、低成本、可靠性高，缺点是速率较低，标准不开放，芯片不能通过Sigma Designs这唯一来源获取。</p>
+<h1 id="万物互联的LPWA"><a href="#万物互联的LPWA" class="headerlink" title="万物互联的LPWA"></a>万物互联的LPWA</h1><p>LPWA（Low Power Wide Area）低功率广域网<br>SigFox：Sigfox公司在全球部署低功耗广域网（LPWA），提供物联网（IoT）连接服务，用户设备集成支持Sigfox协议的射频模块或者芯片，开通连接服务后，即可连接到Sigfox网络。<br>LoRa：LoRa是semtech公司创建的低功耗局域网无线标准，我们知道，低功耗一般很难覆盖远距离，而远距离一般功耗高，LoRa的名字翻译就是远距离无线电（Long Range Radio），它最大特点就是在同样的功耗条件下比其他无线方式传播的距离更远，实现了低功耗和远距离的统一，它在同样的功耗下比传统的无线射频通信距离扩大3-5倍。<br>NB-IoT：窄带物联网（Narrow Band Internet of Things, NB-IoT）成为万物互联网络的一个重要分支。NB-IoT构建于蜂窝网络，只消耗大约180kHz的带宽，可直接部署于GSM网络、UMTS网络或LTE网络，以降低部署成本、实现平滑升级。 NB-IoT是IoT领域一个新兴的技术，支持低功耗设备在广域网的蜂窝数据连接，也被叫作低功耗广域网(LPWAN)。NB-IoT支持待机时间长、对网络连接要求较高设备的高效连接。据说NB-IoT设备电池寿命可以提高至少10年，同时还能提供非常全面的室内蜂窝数据连接覆盖。</p>
+<h1 id="物联网关，汇聚回传"><a href="#物联网关，汇聚回传" class="headerlink" title="物联网关，汇聚回传"></a>物联网关，汇聚回传</h1><h2 id="安全可靠的工业物联网关"><a href="#安全可靠的工业物联网关" class="headerlink" title="安全可靠的工业物联网关"></a>安全可靠的工业物联网关</h2><p>物联网网关的应运条件：为了应对小范围大量设备接入和复杂的环境。<br>物联网网关处于网络层，负责上行回传、下行汇聚。<br>工业物联网网关的条件：<br>1.传统网络设备无法满足物联网现场工业级严格要求。例如，工作温度、防尘、防水、防电磁干扰。<br>2.工业接口协议众多对网关提出了苛刻的要求。例如，需要工业总线：RS-485、Modbus；无线通信：ZigBee、RF等通信方式。<br>3.面对开放网络的安全冲击。容易被攻击。<br>4.物联网网络运维复杂度高。站点分散，部署工作量大，管理困难。<br>工业物理网支持的边缘计算：边缘计算是在靠近终端设备或数据源头的边缘节点，融合联接、计算、存储、控制和应用等核心能力的开放平台，满足用户实时、智能、数据聚合和安全需求。<br>边缘计算类似于人的脊髓中枢神经，而云计算类似于人的大脑中枢神经。<br>两个下行通信技术：PLC、RF Mesh<br>PLC：通信线缆与供电线缆二合一，降低了部署成本，支持设备自组网，设备上电即可使用。<br>传统PLC问题:电磁干扰，噪声过大。<br>RF Mesh：中继信号，扩展无线覆盖范围，支持网络自组织、自修复、流量自平衡，提升贷宽，降低发射功率。</p>
+<h2 id="卓有成效的物联网关解决方案"><a href="#卓有成效的物联网关解决方案" class="headerlink" title="卓有成效的物联网关解决方案"></a>卓有成效的物联网关解决方案</h2><p>电力物联网、城市照明物联网、车联网等<br>华为电力物联网解决方案：<br>困扰：<br>1.业务监管不足导致经济损失严重。<br>　高温过载、用电大户监督、无实时分析。<br>2.运营效率低人力成本高<br>　没有有效手段降低线路损耗；电费收缴难，周期长，拖欠严重；用户用电情况不透明，投诉多；<br>３.业务决策不实时不准确<br>    停电管理无序；用电线路改造无依据；业务的决策缺乏实时数据支持。<br>智能电网趋势：<br>集中部署与云化架构<br>软件定义智能电网<br>配用电一体化<br>微网应用与互动<br>家庭能源管理<br>华为抄表协议：DLMS、Modbus<br>主要价值：电力业务与应用</p>
+<p>华为电力物联网解决方案模块：<br>　billing（计费)　　　　　Prepay(预付费）<br>　MDM（电表数据管理）　CRM（ 客户关系管理）<br>典型应用-城市照明物联网：挑战：高昂的能源消耗、高运维管理成本、城市照明服务质量。<br>华为物联网解决方案：涵盖感知层、网络层、平台层、应用层<br>感知层：<br>外置型路灯控制器AR501L1Rc<br>符合ANSI C136.41标准接口<br>开关调光、制订计划、采集数据<br>网络层：通过RF Mesh、ZigBee通信技术汇报给工业物联网关，然后通过GPRS&#x2F;3G&#x2F;4G发送给IoT平台。<br>平台层：基于EEM平台 四大核心功能：设备管理、计划&#x2F;策略管理、远程升级管理、数据存储<br>应用层：<br>　基于GIS的路灯管理应用软件CityConnect平台<br>　主要功能：设备运维管理、设备告警、GIS地图监控、数据统计、寿命管理。<br>总结：获得低成本的海量路灯连接，降低安装和维护成本，按需照明，降低路灯的能源消耗，保障系统的可靠运行</p>
+<h2 id="智能互联的家庭智能网关"><a href="#智能互联的家庭智能网关" class="headerlink" title="智能互联的家庭智能网关"></a>智能互联的家庭智能网关</h2><h3 id="过去：点状网络"><a href="#过去：点状网络" class="headerlink" title="过去：点状网络"></a>过去：点状网络</h3><p>家庭网络终端：调制解调器（SmartAX MT800）<br>业务：高宽带</p>
+<h3 id="现在：星型网络"><a href="#现在：星型网络" class="headerlink" title="现在：星型网络"></a>现在：星型网络</h3><p>家庭网络终端：家庭网关&#x2F;光猫（HG8245H）<br>业务：高宽带、家庭网关、IPTV机顶盒</p>
+<h3 id="未来：网状结构"><a href="#未来：网状结构" class="headerlink" title="未来：网状结构"></a>未来：网状结构</h3><p>家庭网络终端：智能网关、IPTV&#x2F;OTT机顶盒、家庭WiFi网络&#x2F;家庭物联网络、家庭物联设备<br>业务：智能ONT（）HG3025&#x2F;LS2025）在这里插入图片描述</p>
+<h3 id="家庭网络："><a href="#家庭网络：" class="headerlink" title="家庭网络："></a>家庭网络：</h3><p>关键业务：<br>智能提速：能够识别用户的提速请求，实时上传视频、上行带宽加速<br>家庭WI-FI无缝覆盖：以太网AP扩展Wi-Fi、PLC（电力猫）扩展Wi-Fi、无线中继器扩展Wi-Fi<br>智能互联与智能业务：同一接入标准、同一UI界面<br>智能运维：可视化管理、离线上线的通知</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" rel="tag"><i class="fa fa-tag"></i> 物联网</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/10/13/GPIO%E9%85%8D%E7%BD%AE/" rel="prev" title="GPIO配置">
+                  <i class="fa fa-angle-left"></i> GPIO配置
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/04/10/%E7%89%A9%E8%81%94%E7%BD%91%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="next" title="物联网（二）">
+                  物联网（二） <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2020 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">山夆</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/zeng0813" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"zeng0813","repo":"gitalk","client_id":"7af250df3a6bf3baa2ba","client_secret":"6aa8b354b102601334d064668bc0133868a7638a","admin_user":"zeng0813","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"8f2e4042ff551e2940b64e375aac0f4a"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
