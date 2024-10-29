@@ -315,7 +315,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-10-18 15:10:49" itemprop="dateModified" datetime="2024-10-18T15:10:49+08:00">2024-10-18</time>
+      <time title="修改时间：2024-10-29 14:29:42" itemprop="dateModified" datetime="2024-10-29T14:29:42+08:00">2024-10-29</time>
     </span>
 
   
@@ -328,16 +328,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><p>SSH（Secure Shell，安全外壳）是一种网络安全协议，通过加密和认证机制实现安全的访问和文件传输等业务。</p>
-<h1 id="检查现有SSH密钥"><a href="#检查现有SSH密钥" class="headerlink" title="检查现有SSH密钥"></a>检查现有SSH密钥</h1><p>1、打开终端terminal<br>2、输入命令查看是否存在现有的SSH密钥。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/23/SSH/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <h1 id="0x00-git-配置多个-SSH"><a href="#0x00-git-配置多个-SSH" class="headerlink" title="0x00 git 配置多个 SSH"></a>0x00 git 配置多个 SSH</h1><h2 id="1、生成新的SSH密钥"><a href="#1、生成新的SSH密钥" class="headerlink" title="1、生成新的SSH密钥"></a>1、生成新的SSH密钥</h2><h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><p><code>ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot; -f ~/.ssh/github_id_ed25519</code></p>
+<h3 id="gitee"><a href="#gitee" class="headerlink" title="gitee"></a>gitee</h3><p><code>ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot; -f ~/.ssh/gitee_id_ed25519</code></p>
+<h3 id="gitcode"><a href="#gitcode" class="headerlink" title="gitcode"></a>gitcode</h3><p><code>ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot; -f ~/.ssh/gitcode_id_ed25519</code></p>
+<h2 id="2、配置-ssh-config"><a href="#2、配置-ssh-config" class="headerlink" title="2、配置 ssh-config"></a>2、配置 ssh-config</h2><p>在 ~&#x2F;.ssh 目录下创建一个 config 文件，并添加如下内容（其中 Host 和 HostName 填写 git 服务器的域名，IdentityFile 指定私钥的路径）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># gitee</span><br><span class="line">Host gitee.com</span><br><span class="line">    HostName gitee.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/gitee_id_ed25519</span><br><span class="line"></span><br><span class="line"># github</span><br><span class="line">Host github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/github_id_ed25519</span><br><span class="line"></span><br><span class="line"># gitcode</span><br><span class="line">Host gitcode.com</span><br><span class="line">    HostName gitcode.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/gitcode_id_ed25519</span><br><span class="line"></span><br><span class="line"># atomgit</span><br><span class="line">Host atomgit.com</span><br><span class="line">    HostName atomgit.com</span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    IdentityFile ~/.ssh/atomgit_id_ed25519</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、测试SSH连接"><a href="#3、测试SSH连接" class="headerlink" title="3、测试SSH连接"></a>3、测试SSH连接</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@gitee.com</span><br><span class="line"></span><br><span class="line">ssh -T git@github.com</span><br><span class="line"></span><br><span class="line">ssh -T git@gitcode.com</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
